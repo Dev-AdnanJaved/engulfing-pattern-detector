@@ -8,7 +8,7 @@ from urllib.error import HTTPError
 
 import pytest
 
-from app.data.binance_futures import BinanceFuturesClient, BinanceFuturesError
+from app.data.kraken_futures import KrakenFuturesClient, KrakenFuturesError
 from app.data.manager import DataProviderManager
 from app.scanner.scanner import ScanTarget, Scanner
 
@@ -33,7 +33,7 @@ class FakeHTTPError(HTTPError):
     def __init__(self, code, body=b""):
         header_map = Message()
         super().__init__(
-            url="https://fapi.binance.com/fapi/v1/test",
+            url="https://futures.kraken.com/derivatives/api/v3/test",
             code=code,
             msg="error",
             hdrs=header_map,
@@ -42,10 +42,10 @@ class FakeHTTPError(HTTPError):
 
 
 def connected_client(monkeypatch, handler, **kwargs):
-    monkeypatch.setattr("app.data.binance_futures.urlopen", handler)
-    client = BinanceFuturesClient(
+    monkeypatch.setattr("app.data.kraken_futures.urlopen", handler)
+    client = KrakenFuturesClient(
         retries=kwargs.pop("retries", 1),
-        logger=logging.getLogger("test.binance"),
+        logger=logging.getLogger("test.kraken"),
         **kwargs,
     )
     client.connect()
@@ -55,82 +55,89 @@ def connected_client(monkeypatch, handler, **kwargs):
 def test_connect_loads_tradable_symbols(monkeypatch, caplog):
     def urlopen(request, timeout=0):
         del timeout
-        if request.full_url.endswith("/exchangeInfo"):
+        if request.full_url.endswith("/instruments"):
             return FakeResponse(
                 {
-                    "symbols": [
-                        {"symbol": "BTCUSDT", "status": "TRADING"},
-                        {"symbol": "ETHUSDT", "status": "TRADING"},
-                        {"symbol": "OLDUSDT", "status": "BREAK"},
-                    ]
+                    "result": "success",
+                    "instruments": [
+                        {"symbol": "PF_XBTUSD", "tradeable": True},
+                        {"symbol": "PF_ETHUSD", "tradeable": True},
+                        {"symbol": "PI_XBTUSD", "tradeable": False},
+                    ],
                 }
             )
         raise AssertionError(request.full_url)
 
     with caplog.at_level(logging.INFO):
         client = connected_client(monkeypatch, urlopen)
-    assert client.get_instruments() == ["BTCUSDT", "ETHUSDT"]
-    assert "Binance Futures connected" in caplog.text
+    assert client.get_instruments() == ["PF_ETHUSD", "PF_XBTUSD"]
+    assert "Kraken Futures connected" in caplog.text
 
 
 def test_search_symbols_filters_by_query(monkeypatch, caplog):
     def urlopen(request, timeout=0):
         del timeout
-        if request.full_url.endswith("/exchangeInfo"):
+        if request.full_url.endswith("/instruments"):
             return FakeResponse(
                 {
-                    "symbols": [
-                        {"symbol": "BTCUSDT", "status": "TRADING"},
-                        {"symbol": "ETHUSDT", "status": "TRADING"},
-                    ]
+                    "result": "success",
+                    "instruments": [
+                        {"symbol": "PF_XBTUSD", "tradeable": True},
+                        {"symbol": "PF_ETHUSD", "tradeable": True},
+                    ],
                 }
             )
         raise AssertionError(request.full_url)
 
     with caplog.at_level(logging.INFO):
         client = connected_client(monkeypatch, urlopen)
-        matches = client.search_symbols("BTC")
-    assert matches == ["BTCUSDT"]
-    assert "Binance Futures symbols matching 'BTC': 1" in caplog.text
+        matches = client.search_symbols("XBT")
+    assert matches == ["PF_XBTUSD"]
+    assert "Kraken Futures symbols matching 'XBT': 1" in caplog.text
 
 
 def test_candles_map_timeframes_and_closed_status(monkeypatch):
     now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
+    hour_ms = 3_600_000
+    current_hour_open = now_ms - (now_ms % hour_ms)
 
     def urlopen(request, timeout=0):
         del timeout
-        if request.full_url.endswith("/exchangeInfo"):
-            return FakeResponse({"symbols": [{"symbol": "BTCUSDT", "status": "TRADING"}]})
-        if "/klines?" in request.full_url:
-            assert "interval=1h" in request.full_url
-            assert "symbol=BTCUSDT" in request.full_url
+        if request.full_url.endswith("/instruments"):
             return FakeResponse(
-                [
-                    [
-                        now_ms - 7200000,
-                        "100",
-                        "101",
-                        "99",
-                        "100.5",
-                        "10",
-                        now_ms - 3600001,
-                    ],
-                    [
-                        now_ms - 3600000,
-                        "100.5",
-                        "102",
-                        "100",
-                        "101.5",
-                        "12",
-                        now_ms + 3600000,
-                    ],
-                ]
+                {
+                    "result": "success",
+                    "instruments": [{"symbol": "PF_XBTUSD", "tradeable": True}],
+                }
+            )
+        if "/api/charts/v1/trade/PF_XBTUSD/1h" in request.full_url:
+            return FakeResponse(
+                {
+                    "candles": [
+                        {
+                            "time": current_hour_open - hour_ms,
+                            "open": "100",
+                            "high": "101",
+                            "low": "99",
+                            "close": "100.5",
+                            "volume": "10",
+                        },
+                        {
+                            "time": current_hour_open,
+                            "open": "100.5",
+                            "high": "102",
+                            "low": "100",
+                            "close": "101.5",
+                            "volume": "12",
+                        },
+                    ]
+                }
             )
         raise AssertionError(request.full_url)
 
     client = connected_client(monkeypatch, urlopen)
-    candles = client.get_candles("btcusdt", "1h", 2)
-    assert candles[0].symbol == "BTCUSDT"
+    candles = client.get_candles("pf_xbtusd", "1h", 2)
+    assert candles[0].symbol == "PF_XBTUSD"
     assert candles[0].is_closed is True
     assert candles[1].is_closed is False
 
@@ -138,38 +145,53 @@ def test_candles_map_timeframes_and_closed_status(monkeypatch):
 def test_current_price_and_24h_volume(monkeypatch):
     def urlopen(request, timeout=0):
         del timeout
-        if request.full_url.endswith("/exchangeInfo"):
-            return FakeResponse({"symbols": [{"symbol": "BTCUSDT", "status": "TRADING"}]})
-        if request.full_url.endswith("/ticker/price?symbol=BTCUSDT"):
-            return FakeResponse({"symbol": "BTCUSDT", "price": "65000.5"})
-        if request.full_url.endswith("/ticker/24hr?symbol=BTCUSDT"):
-            return FakeResponse({"symbol": "BTCUSDT", "quoteVolume": "1234567890"})
-        raise AssertionError(request.full_url)
-
-    client = connected_client(monkeypatch, urlopen)
-    assert client.get_current_price("BTCUSDT") == 65000.5
-    assert client.get_24h_volume_usd("BTCUSDT") == 1234567890.0
-
-
-def test_scanner_loads_manual_binance_targets(monkeypatch):
-    def urlopen(request, timeout=0):
-        del timeout
-        if request.full_url.endswith("/exchangeInfo"):
+        if request.full_url.endswith("/instruments"):
             return FakeResponse(
                 {
-                    "symbols": [
-                        {"symbol": "BTCUSDT", "status": "TRADING"},
-                        {"symbol": "ETHUSDT", "status": "TRADING"},
-                    ]
+                    "result": "success",
+                    "instruments": [{"symbol": "PF_XBTUSD", "tradeable": True}],
+                }
+            )
+        if request.full_url.endswith("/tickers"):
+            return FakeResponse(
+                {
+                    "result": "success",
+                    "tickers": [
+                        {
+                            "symbol": "PF_XBTUSD",
+                            "last": 65000.5,
+                            "volumeQuote": 1234567890.0,
+                        }
+                    ],
                 }
             )
         raise AssertionError(request.full_url)
 
-    monkeypatch.setattr("app.data.binance_futures.urlopen", urlopen)
-    client = BinanceFuturesClient(logger=logging.getLogger("test.binance"))
+    client = connected_client(monkeypatch, urlopen)
+    assert client.get_current_price("PF_XBTUSD") == 65000.5
+    assert client.get_24h_volume_usd("PF_XBTUSD") == 1234567890.0
+
+
+def test_scanner_loads_manual_kraken_targets(monkeypatch):
+    def urlopen(request, timeout=0):
+        del timeout
+        if request.full_url.endswith("/instruments"):
+            return FakeResponse(
+                {
+                    "result": "success",
+                    "instruments": [
+                        {"symbol": "PF_XBTUSD", "tradeable": True},
+                        {"symbol": "PF_ETHUSD", "tradeable": True},
+                    ],
+                }
+            )
+        raise AssertionError(request.full_url)
+
+    monkeypatch.setattr("app.data.kraken_futures.urlopen", urlopen)
+    client = KrakenFuturesClient(logger=logging.getLogger("test.kraken"))
     client.connect()
     providers = DataProviderManager()
-    providers.add_provider("binance_futures", client)
+    providers.add_provider("kraken_futures", client)
     config = {
         "scanner": {
             "enabled": True,
@@ -178,11 +200,11 @@ def test_scanner_loads_manual_binance_targets(monkeypatch):
             "scan_interval_seconds": 900,
             "volume_filter": {"enabled": False, "minimum_24h_volume_usd": 0},
         },
-        "binance_futures": {
+        "kraken_futures": {
             "enabled": True,
             "symbol_mode": "manual",
-            "symbols": ["BTCUSDT", "ETHUSDT"],
-            "all_mode_filter": {"include_patterns": ["*USDT"], "exclude_patterns": []},
+            "symbols": ["PF_XBTUSD", "PF_ETHUSD"],
+            "all_mode_filter": {"include_patterns": ["PF_*"], "exclude_patterns": []},
         },
         "strategy": {
             "signal_timeframe": "1h",
@@ -210,13 +232,13 @@ def test_scanner_loads_manual_binance_targets(monkeypatch):
         logging.getLogger("test"),
     )
     targets = scanner.resolve_targets()
-    assert ScanTarget("BTCUSDT", "binance_futures") in targets
-    assert ScanTarget("ETHUSDT", "binance_futures") in targets
+    assert ScanTarget("PF_XBTUSD", "kraken_futures") in targets
+    assert ScanTarget("PF_ETHUSD", "kraken_futures") in targets
 
 
-def test_unavailable_binance_targets_are_skipped():
+def test_unavailable_kraken_targets_are_skipped():
     providers = DataProviderManager()
-    providers.mark_unavailable("binance_futures", "HTTP 451 restricted location")
+    providers.mark_unavailable("kraken_futures", "connection failed")
     config = {
         "scanner": {
             "enabled": True,
@@ -225,11 +247,11 @@ def test_unavailable_binance_targets_are_skipped():
             "scan_interval_seconds": 900,
             "volume_filter": {"enabled": False, "minimum_24h_volume_usd": 0},
         },
-        "binance_futures": {
+        "kraken_futures": {
             "enabled": True,
             "symbol_mode": "manual",
-            "symbols": ["BTCUSDT"],
-            "all_mode_filter": {"include_patterns": ["*USDT"], "exclude_patterns": []},
+            "symbols": ["PF_XBTUSD"],
+            "all_mode_filter": {"include_patterns": ["PF_*"], "exclude_patterns": []},
         },
         "strategy": {
             "signal_timeframe": "1h",
@@ -262,9 +284,9 @@ def test_unavailable_binance_targets_are_skipped():
 def test_api_error_is_explicit(monkeypatch):
     def urlopen(request, timeout=0):
         del request, timeout
-        raise FakeHTTPError(418, b'{"code":-1000,"msg":"bad"}')
+        raise FakeHTTPError(503, b'{"result":"error","error":"down"}')
 
-    client = BinanceFuturesClient(retries=0, logger=logging.getLogger("test.binance"))
-    monkeypatch.setattr("app.data.binance_futures.urlopen", urlopen)
-    with pytest.raises(BinanceFuturesError):
+    client = KrakenFuturesClient(retries=0, logger=logging.getLogger("test.kraken"))
+    monkeypatch.setattr("app.data.kraken_futures.urlopen", urlopen)
+    with pytest.raises(KrakenFuturesError):
         client.get_instruments()

@@ -29,6 +29,9 @@ class DataProviderManager:
         self.providers.pop(name, None)
         self.unavailable[name] = reason
 
+    def is_available(self, name: str) -> bool:
+        return name in self.providers
+
     def get_provider(self, name: str) -> Any:
         provider = self.providers.get(name)
         if provider is not None:

@@ -101,6 +101,13 @@ class TelegramCommandPoller:
             except Exception:
                 self.logger.exception("Binance Futures symbol search failed")
                 self._reply("Binance Futures symbol search is currently unavailable.")
+        elif command == "/krakensymbols":
+            query = " ".join(text.strip().split()[1:])
+            try:
+                self._reply(self.scanner.search_symbols("kraken_futures", query))
+            except Exception:
+                self.logger.exception("Kraken Futures symbol search failed")
+                self._reply("Kraken Futures symbol search is currently unavailable.")
         elif command == "/scan":
             self._reply("Manual scan started.")
             self.scanner.scan_once()
@@ -125,5 +132,6 @@ class TelegramCommandPoller:
             "/mt5symbols [query] — search symbols available from MT5\n"
             "/capitalsymbols [query] — search symbols available from Capital.com\n"
             "/binancesymbols [query] — search symbols available from Binance Futures\n"
+            "/krakensymbols [query] — search symbols available from Kraken Futures\n"
             "/scan — run a manual scan now"
         )

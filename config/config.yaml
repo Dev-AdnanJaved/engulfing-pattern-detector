@@ -76,6 +76,26 @@ binance_futures:
   retries: 2
   base_url: "https://fapi.binance.com"
 
+# Kraken USD linear perpetual futures (PF_* symbols) via public REST endpoints.
+kraken_futures:
+  enabled: true
+  symbol_mode: "manual"
+  symbols:
+    - "PF_XBTUSD"
+    - "PF_ETHUSD"
+  all_mode_filter:
+    include_patterns:
+      - "PF_*"
+    exclude_patterns: []
+  history:
+    1h: 200
+    4h: 100
+    1d: 100
+  timeout_seconds: 10
+  retries: 2
+  base_url: "https://futures.kraken.com"
+  tick_type: "trade"
+
 strategy:
   signal_timeframe: "1h"
   confirmation_4h: "4h"

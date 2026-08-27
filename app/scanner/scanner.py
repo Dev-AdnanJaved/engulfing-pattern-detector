@@ -67,6 +67,7 @@ class Scanner:
         self._last_cycle_at: datetime | None = None
         self._active_targets: list[ScanTarget] = []
         self._scan_number = 0
+        self._unavailable_provider_warnings: set[str] = set()
 
     def resolve_symbols(self) -> list[str]:
         """Return symbols for compatibility with the original OANDA API."""
@@ -85,7 +86,7 @@ class Scanner:
         else:
             self._append_discovered(targets, "oanda")
 
-        for provider in ("mt5", "capital", "binance_futures"):
+        for provider in ("mt5", "capital", "binance_futures", "kraken_futures"):
             provider_config = self.config.get(provider, {})
             if isinstance(provider_config, dict) and provider_config.get("enabled", False):
                 self._append_configured_targets(targets, provider, provider_config)
@@ -95,6 +96,9 @@ class Scanner:
         for target in targets:
             key = (target.provider, target.symbol)
             if key in seen:
+                continue
+            if not self._provider_is_available(target.provider):
+                self._warn_unavailable_provider(target.provider)
                 continue
             seen.add(key)
             if self._passes_volume_filter(target):
@@ -119,6 +123,14 @@ class Scanner:
             for target in targets:
                 try:
                     self.scan_symbol(target.symbol, target.provider)
+                except ProviderUnavailable as exc:
+                    failures += 1
+                    self.logger.warning(
+                        "Skipping %s via %s: %s",
+                        target.symbol,
+                        target.provider.upper(),
+                        exc,
+                    )
                 except Exception:
                     failures += 1
                     self.logger.exception(
@@ -422,6 +434,21 @@ class Scanner:
         if provider != "oanda":
             raise ProviderUnavailable(f"{provider.upper()} provider is not configured")
         return self.data_provider
+
+    def _provider_is_available(self, provider: str) -> bool:
+        if isinstance(self.data_provider, DataProviderManager):
+            return self.data_provider.is_available(provider)
+        return provider == "oanda"
+
+    def _warn_unavailable_provider(self, provider: str) -> None:
+        if provider in self._unavailable_provider_warnings:
+            return
+        if isinstance(self.data_provider, DataProviderManager):
+            reason = self.data_provider.unavailable.get(provider, "provider is not configured")
+        else:
+            reason = "provider is not configured"
+        self.logger.warning("%s symbols will not be scanned: %s", provider.upper(), reason)
+        self._unavailable_provider_warnings.add(provider)
 
     def _history_config(self, provider: str) -> dict[str, int]:
         history = dict(self.config["data"]["history"])

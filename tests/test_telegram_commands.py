@@ -53,6 +53,7 @@ def test_help_aliases_reply_with_command_list():
         assert "/scan" in notifier.messages[-1][0]
         assert "/capitalsymbols" in notifier.messages[-1][0]
         assert "/binancesymbols" in notifier.messages[-1][0]
+        assert "/krakensymbols" in notifier.messages[-1][0]
 
 
 def test_health_and_symbols_commands_reply():

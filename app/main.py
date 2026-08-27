@@ -10,6 +10,7 @@ from pathlib import Path
 from app.config.loader import ConfigurationError, load_config
 from app.data.binance_futures import BinanceFuturesClient
 from app.data.capital import CapitalClient
+from app.data.kraken_futures import KrakenFuturesClient
 from app.data.manager import DataProviderManager
 from app.data.mt5 import Mt5Client, Mt5Error
 from app.data.oanda import OandaClient
@@ -134,10 +135,39 @@ def build_scanner(
             binance.connect()
             providers.add_provider("binance_futures", binance)
         except Exception as exc:
+            message = str(exc)
+            if "HTTP 451" in message or "restricted location" in message.casefold():
+                logger.error(
+                    "Binance Futures is geo-blocked on this server (HTTP 451). "
+                    "Disable binance_futures in config or run the scanner from an allowed region."
+                )
             logger.error("Binance Futures provider unavailable: %s", exc)
             if binance is not None:
                 binance.close()
             providers.mark_unavailable("binance_futures", str(exc))
+    kraken_config = config.get("kraken_futures", {})
+    if isinstance(kraken_config, dict) and kraken_config.get("enabled", False):
+        logger.info("Kraken Futures provider enabled")
+        kraken: KrakenFuturesClient | None = None
+        try:
+            kraken = KrakenFuturesClient(
+                base_url=str(
+                    kraken_config.get("base_url", KrakenFuturesClient.DEFAULT_BASE_URL)
+                ),
+                tick_type=str(kraken_config.get("tick_type", "trade")),
+                timeout_seconds=kraken_config.get(
+                    "timeout_seconds", config["data"]["timeout_seconds"]
+                ),
+                retries=kraken_config.get("retries", 2),
+                logger=logger,
+            )
+            kraken.connect()
+            providers.add_provider("kraken_futures", kraken)
+        except Exception as exc:
+            logger.error("Kraken Futures provider unavailable: %s", exc)
+            if kraken is not None:
+                kraken.close()
+            providers.mark_unavailable("kraken_futures", str(exc))
     telegram_config = config["alerts"]["telegram"]
     notifier = TelegramNotifier(
         bot_token=os.environ.get("TELEGRAM_BOT_TOKEN"),
@@ -164,7 +194,7 @@ def startup_message(scanner: Scanner, symbols: list[ScanTarget]) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Scan OANDA, MT5, Capital.com, and Binance Futures confirmed 1H engulfing signals"
+        description="Scan OANDA, MT5, Capital.com, Binance Futures, and Kraken Futures confirmed 1H engulfing signals"
     )
     parser.add_argument("--config", default=str(PROJECT_ROOT / "config" / "config.yaml"))
     parser.add_argument("--once", action="store_true", help="scan once instead of running continuously")
@@ -175,9 +205,9 @@ def main() -> None:
         help="list Capital.com symbols matching QUERY and exit",
     )
     parser.add_argument(
-        "--binance-search",
+        "--kraken-search",
         metavar="QUERY",
-        help="list Binance Futures symbols matching QUERY and exit",
+        help="list Kraken Futures symbols matching QUERY and exit",
     )
     args = parser.parse_args()
 
@@ -212,6 +242,9 @@ def main() -> None:
                 return
             if args.binance_search is not None:
                 print(scanner.search_symbols("binance_futures", args.binance_search))
+                return
+            if args.kraken_search is not None:
+                print(scanner.search_symbols("kraken_futures", args.kraken_search))
                 return
             if notifier.enabled:
                 try:

@@ -48,7 +48,8 @@ def _validate_config(config: dict[str, Any]) -> None:
                 isinstance(entry, dict)
                 and isinstance(entry.get("symbol"), str)
                 and entry["symbol"]
-                and entry.get("provider", "oanda") in {"oanda", "mt5", "capital", "binance_futures"}
+                and entry.get("provider", "oanda")
+                in {"oanda", "mt5", "capital", "binance_futures", "kraken_futures"}
             ):
                 continue
             raise ConfigurationError(
@@ -125,7 +126,7 @@ def _validate_config(config: dict[str, Any]) -> None:
     ):
         raise ConfigurationError("logging.file_path must be set when file logging is enabled")
 
-    for provider in ("oanda", "mt5", "capital", "binance_futures"):
+    for provider in ("oanda", "mt5", "capital", "binance_futures", "kraken_futures"):
         provider_config = config.get(provider)
         if provider_config is not None:
             _validate_optional_provider(provider, provider_config)
@@ -181,7 +182,7 @@ def _validate_optional_provider(provider: str, provider_config: Any) -> None:
         retries = provider_config.get("retries")
         if retries is not None and (not isinstance(retries, int) or retries < 0):
             raise ConfigurationError("capital.retries must be a non-negative integer")
-    if provider in {"mt5", "binance_futures"}:
+    if provider in {"mt5", "binance_futures", "kraken_futures"}:
         history = provider_config.get("history")
         if history is not None:
             if not isinstance(history, dict):
@@ -203,3 +204,10 @@ def _validate_optional_provider(provider: str, provider_config: Any) -> None:
             base_url = provider_config.get("base_url", "https://fapi.binance.com")
             if not isinstance(base_url, str) or not base_url:
                 raise ConfigurationError("binance_futures.base_url must be a non-empty URL")
+        if provider == "kraken_futures":
+            base_url = provider_config.get("base_url", "https://futures.kraken.com")
+            if not isinstance(base_url, str) or not base_url:
+                raise ConfigurationError("kraken_futures.base_url must be a non-empty URL")
+            tick_type = provider_config.get("tick_type", "trade")
+            if not isinstance(tick_type, str) or not tick_type:
+                raise ConfigurationError("kraken_futures.tick_type must be a non-empty string")
