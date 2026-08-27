@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sqlite3
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -34,6 +35,22 @@ class SignalDatabase:
         )
         self._migrate_provider_column()
         self.connection.commit()
+
+    def recently_sent(self, symbol: str, provider: str, cooldown_minutes: int) -> bool:
+        """Return True if a Telegram alert was sent for this pair within the cooldown window."""
+        if cooldown_minutes <= 0:
+            return False
+        cutoff = datetime.now(timezone.utc) - timedelta(minutes=cooldown_minutes)
+        row = self.connection.execute(
+            """
+            SELECT 1 FROM signals
+            WHERE provider = ? AND symbol = ? AND telegram_sent = 1
+              AND created_at >= ?
+            LIMIT 1
+            """,
+            (provider, symbol, cutoff.isoformat()),
+        ).fetchone()
+        return row is not None
 
     def reserve_signal(self, signal: Signal) -> bool:
         # Existing databases may contain pre-provider OANDA IDs. Check the

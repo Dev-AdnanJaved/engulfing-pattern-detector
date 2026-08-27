@@ -74,6 +74,19 @@ def _validate_config(config: dict[str, Any]) -> None:
             raise ConfigurationError(f"pattern.{key} must be true or false")
     if pattern["body_only"] is not True:
         raise ConfigurationError("pattern.body_only must remain true for this strategy")
+    early = pattern.get("early_detection", {})
+    if early is None:
+        early = {}
+    if not isinstance(early, dict):
+        raise ConfigurationError("pattern.early_detection must be a mapping")
+    if early:
+        if not isinstance(early.get("enabled"), bool):
+            raise ConfigurationError("pattern.early_detection.enabled must be true or false")
+        minutes = early.get("minutes_before_close", 5)
+        if not isinstance(minutes, (int, float)) or minutes < 0:
+            raise ConfigurationError(
+                "pattern.early_detection.minutes_before_close must be a non-negative number"
+            )
 
     data = config["data"]
     if data.get("provider") != "oanda":
@@ -87,9 +100,13 @@ def _validate_config(config: dict[str, Any]) -> None:
     if not isinstance(data.get("timeout_seconds"), (int, float)) or data["timeout_seconds"] <= 0:
         raise ConfigurationError("data.timeout_seconds must be greater than zero")
 
-    telegram = config["alerts"].get("telegram")
+    alerts = config["alerts"]
+    telegram = alerts.get("telegram")
     if not isinstance(telegram, dict) or not isinstance(telegram.get("enabled"), bool):
         raise ConfigurationError("alerts.telegram.enabled must be true or false")
+    cooldown = alerts.get("cooldown_minutes", 0)
+    if not isinstance(cooldown, (int, float)) or cooldown < 0:
+        raise ConfigurationError("alerts.cooldown_minutes must be a non-negative number")
     if not isinstance(config["storage"].get("database"), str) or not config["storage"]["database"]:
         raise ConfigurationError("storage.database must be a non-empty path")
     logging_config = config["logging"]

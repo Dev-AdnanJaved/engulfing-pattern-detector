@@ -496,7 +496,11 @@ def test_oanda_and_mt5_continue_when_capital_scan_fails():
         config,
         providers,
         SimpleNamespace(send_signal=lambda s: False),
-        SimpleNamespace(reserve_signal=lambda s: True, mark_telegram_sent=lambda s: None),
+        SimpleNamespace(
+            reserve_signal=lambda s: True,
+            mark_telegram_sent=lambda s: None,
+            recently_sent=lambda symbol, provider, cooldown_minutes: False,
+        ),
         logging.getLogger("test"),
     )
     scanner.scan_once(

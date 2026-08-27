@@ -80,6 +80,10 @@ class NoopStore:
     def mark_telegram_sent(self, signal_id):
         del signal_id
 
+    def recently_sent(self, symbol, provider, cooldown_minutes):
+        del symbol, provider, cooldown_minutes
+        return False
+
 
 def make_scanner(config, provider):
     return Scanner(config, provider, NoopNotifier(), NoopStore(), logging.getLogger("test"))

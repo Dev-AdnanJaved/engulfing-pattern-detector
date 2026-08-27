@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import logging
-import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from fnmatch import fnmatchcase
@@ -11,12 +10,10 @@ from typing import Any, Callable, Protocol, Sequence
 from app.data.manager import DataProviderManager, ProviderUnavailable
 from app.data.models import Candle
 from app.strategy.engulfing import (
-    is_bearish,
     is_bearish_engulfing,
-    is_bullish,
     is_bullish_engulfing,
 )
-from app.strategy.signal import Signal, evaluate_signal
+from app.strategy.signal import Signal, evaluate_signal, minutes_until_close
 
 
 class MarketDataProvider(Protocol):
@@ -33,6 +30,7 @@ class Notifier(Protocol):
 class SignalStore(Protocol):
     def reserve_signal(self, signal: Signal) -> bool: ...
     def mark_telegram_sent(self, signal_id: str) -> None: ...
+    def recently_sent(self, symbol: str, provider: str, cooldown_minutes: int) -> bool: ...
 
 
 @dataclass(frozen=True)
@@ -141,6 +139,7 @@ class Scanner:
         history_config = self._history_config(provider)
         strategy_config = self.config["strategy"]
         pattern_config = self.config["pattern"]
+        early_minutes = _early_minutes_before_close(pattern_config)
         one_hour = self._get_history(
             symbol,
             strategy_config["signal_timeframe"],
@@ -152,26 +151,35 @@ class Scanner:
         if not closed_1h:
             self.logger.warning("%s has no closed 1H candle", symbol)
             return
+
+        reject_doji = pattern_config["reject_doji"]
+        processed_key = (provider, symbol)
         latest_closed = closed_1h[-1]
         candle_key = latest_closed.timestamp.isoformat()
-        processed_key = (provider, symbol)
-        if self._last_processed.get(processed_key) == candle_key:
-            return
-        previous, current = closed_1h[-2:] if len(closed_1h) >= 2 else (None, None)
-        has_bullish_pattern = (
-            previous is not None
-            and current is not None
-            and pattern_config["bullish_engulfing"]
-            and is_bullish_engulfing(previous, current, pattern_config["reject_doji"])
-        )
-        has_bearish_pattern = (
-            previous is not None
-            and current is not None
-            and pattern_config["bearish_engulfing"]
-            and is_bearish_engulfing(previous, current, pattern_config["reject_doji"])
-        )
-        if not has_bullish_pattern and not has_bearish_pattern:
-            self._last_processed[processed_key] = candle_key
+        already_processed_closed = self._last_processed.get(processed_key) == candle_key
+
+        needs_confirmation = False
+        if not already_processed_closed and len(closed_1h) >= 2:
+            previous, current = closed_1h[-2:]
+            if _has_engulfing_pattern(previous, current, pattern_config, require_closed=True):
+                needs_confirmation = True
+
+        forming = one_hour[-1] if one_hour and not one_hour[-1].is_closed else None
+        if (
+            not needs_confirmation
+            and early_minutes > 0
+            and forming is not None
+            and _has_engulfing_pattern(
+                closed_1h[-1], forming, pattern_config, require_closed=False
+            )
+        ):
+            minutes_left = minutes_until_close(forming, strategy_config["signal_timeframe"])
+            if minutes_left is not None and 0 < minutes_left <= early_minutes:
+                needs_confirmation = True
+
+        if not needs_confirmation:
+            if not already_processed_closed:
+                self._last_processed[processed_key] = candle_key
             return
 
         four_hour = self._get_history(
@@ -191,23 +199,13 @@ class Scanner:
         latest_4h = _latest_closed(four_hour)
         latest_1d = _latest_closed(one_day)
         if latest_4h is None or latest_1d is None:
-            self._last_processed[processed_key] = candle_key
+            if not already_processed_closed:
+                self._last_processed[processed_key] = candle_key
             return
 
-        reject_doji = pattern_config["reject_doji"]
-        confirmed_bullish = (
-            has_bullish_pattern
-            and is_bullish(latest_4h, reject_doji)
-            and is_bullish(latest_1d, reject_doji)
-        )
-        confirmed_bearish = (
-            has_bearish_pattern
-            and is_bearish(latest_4h, reject_doji)
-            and is_bearish(latest_1d, reject_doji)
-        )
-        if not confirmed_bullish and not confirmed_bearish:
+        if not already_processed_closed:
+            # Mark closed candle evaluated even if only early path produces a signal.
             self._last_processed[processed_key] = candle_key
-            return
 
         current_price = data_provider.get_current_price(symbol)
         signal = evaluate_signal(
@@ -221,13 +219,22 @@ class Scanner:
             confirmation_1d=strategy_config["confirmation_1d"],
             bullish_enabled=pattern_config["bullish_engulfing"],
             bearish_enabled=pattern_config["bearish_engulfing"],
-            reject_doji=pattern_config["reject_doji"],
+            reject_doji=reject_doji,
             provider=provider,
+            early_minutes_before_close=early_minutes,
+            include_closed=not already_processed_closed,
         )
-        self._last_processed[processed_key] = candle_key
         if signal is None:
             return
-        if provider == "capital":
+        if not signal.candle_closed:
+            self.logger.info(
+                "Early %s signal for %s via %s (candle closes in ~%s min)",
+                signal.direction,
+                symbol,
+                provider.upper(),
+                signal.minutes_to_close,
+            )
+        elif provider == "capital":
             self.logger.info("Capital.com %s signal detected", signal.direction)
         else:
             self.logger.info(
@@ -236,6 +243,18 @@ class Scanner:
                 symbol,
                 provider.upper(),
             )
+        self._emit_signal(signal, symbol, provider)
+
+    def _emit_signal(self, signal: Signal, symbol: str, provider: str) -> None:
+        cooldown_minutes = int(self.config.get("alerts", {}).get("cooldown_minutes", 0) or 0)
+        if cooldown_minutes > 0 and self.store.recently_sent(symbol, provider, cooldown_minutes):
+            self.logger.info(
+                "Cooldown active for %s via %s; skipping alert for %s minutes",
+                symbol,
+                provider.upper(),
+                cooldown_minutes,
+            )
+            return
         if not self.store.reserve_signal(signal):
             self.logger.info("Duplicate signal skipped: %s", signal.id)
             return
@@ -254,7 +273,7 @@ class Scanner:
         if not scanner_config["enabled"]:
             self.logger.info("Scanner disabled in configuration")
             return
-        interval = scanner_config["scan_interval_seconds"]
+        interval = int(scanner_config["scan_interval_seconds"])
         targets = self.prepare() if symbols is None else _normalize_targets(symbols)
         self._active_targets = list(targets)
         self._running = True
@@ -262,9 +281,26 @@ class Scanner:
         self.logger.info("Scanner started")
         while not self._stop_event.is_set():
             self.scan_once(targets)
-            self._stop_event.wait(interval)
+            if self._stop_event.is_set():
+                break
+            self._wait_for_next_scan(interval)
         self._running = False
         self.logger.info("Scanner stopped")
+
+    def _wait_for_next_scan(self, interval_seconds: int) -> None:
+        remaining = max(0, int(interval_seconds))
+        if remaining <= 0:
+            return
+        self.logger.info("Waiting for next scan in %s seconds...", remaining)
+        self._notify_status(f"⏳ Waiting for next scan in *{remaining}* seconds...")
+        while remaining > 0 and not self._stop_event.is_set():
+            if self._stop_event.wait(1):
+                break
+            remaining -= 1
+            if remaining <= 0:
+                break
+            # Log every second so the console shows the live countdown.
+            self.logger.info("Waiting for next scan in %s seconds...", remaining)
 
     def stop(self) -> None:
         self._stop_event.set()
@@ -486,6 +522,34 @@ def _matches_any(symbol: str, patterns: Sequence[Any]) -> bool:
         isinstance(pattern, str) and fnmatchcase(symbol.casefold(), pattern.casefold())
         for pattern in patterns
     )
+
+
+def _has_engulfing_pattern(
+    previous: Candle,
+    current: Candle,
+    pattern_config: dict[str, Any],
+    *,
+    require_closed: bool,
+) -> bool:
+    reject_doji = pattern_config["reject_doji"]
+    bullish = pattern_config["bullish_engulfing"] and is_bullish_engulfing(
+        previous, current, reject_doji, require_closed=require_closed
+    )
+    bearish = pattern_config["bearish_engulfing"] and is_bearish_engulfing(
+        previous, current, reject_doji, require_closed=require_closed
+    )
+    return bullish or bearish
+
+
+def _early_minutes_before_close(pattern_config: dict[str, Any]) -> int:
+    early = pattern_config.get("early_detection", {})
+    if not isinstance(early, dict) or not early.get("enabled", False):
+        return 0
+    minutes = early.get("minutes_before_close", 5)
+    try:
+        return max(0, int(minutes))
+    except (TypeError, ValueError):
+        return 0
 
 
 def _format_time(value: datetime | None) -> str:

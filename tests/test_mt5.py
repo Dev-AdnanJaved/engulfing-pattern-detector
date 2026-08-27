@@ -89,6 +89,10 @@ class NoopStore:
     def mark_telegram_sent(self, signal_id):
         del signal_id
 
+    def recently_sent(self, symbol, provider, cooldown_minutes):
+        del symbol, provider, cooldown_minutes
+        return False
+
 
 def connected_client(fake=None):
     fake = fake or FakeMt5()

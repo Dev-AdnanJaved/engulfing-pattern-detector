@@ -59,5 +59,13 @@ def test_bearish_wick_only_engulfing_fails():
     assert not is_bearish_engulfing(candle(100, 105, high=110, low=95), candle(104, 101, high=120, low=90))
 
 
-def test_open_candle_is_rejected():
+def test_open_candle_is_rejected_by_default():
     assert not is_bullish_engulfing(candle(105, 100), candle(99, 106, closed=False))
+
+
+def test_open_candle_allowed_when_require_closed_false():
+    assert is_bullish_engulfing(
+        candle(105, 100),
+        candle(99, 106, closed=False),
+        require_closed=False,
+    )

@@ -122,6 +122,23 @@ def format_signal(signal: Signal) -> str:
     direction_word = "Bullish" if signal.direction == "BUY" else "Bearish"
     candle_time = signal.candle_time.astimezone(timezone.utc).strftime("%H:%M UTC")
     current_price = _format_price(signal.current_price)
+    if signal.candle_closed:
+        candle_note = f"🕐 *CANDLE CLOSED:* {candle_time}"
+        reason = (
+            f"{direction_word} engulfing pattern formed on the 1H closed candle with "
+            f"{signal.h4_direction} 4H and {signal.d1_direction} 1D confirmation."
+        )
+    else:
+        minutes = signal.minutes_to_close if signal.minutes_to_close is not None else "?"
+        candle_note = (
+            f"⚠️ *NOTE:* Candle is not closed yet — will close in ~{minutes} mins "
+            f"(candle open {candle_time})"
+        )
+        reason = (
+            f"{direction_word} engulfing setup is forming on the live 1H candle with "
+            f"{signal.h4_direction} 4H and {signal.d1_direction} 1D confirmation. "
+            f"Candle is not closed yet."
+        )
     return (
         f"🚨 *{signal.direction} SIGNAL — {display_pair}*\n\n"
         f"*Pair:* {display_pair}\n"
@@ -133,9 +150,8 @@ def format_signal(signal: Signal) -> str:
         f"• 4H: {pattern_icon} {signal.h4_direction.title()}\n"
         f"• 1D: {pattern_icon} {signal.d1_direction.title()}\n\n"
         f"💡 *REASON*\n\n"
-        f"{direction_word} engulfing pattern formed on the 1H closed candle with "
-        f"{signal.h4_direction} 4H and {signal.d1_direction} 1D confirmation.\n\n"
-        f"🕐 *CANDLE CLOSED:* {candle_time}"
+        f"{reason}\n\n"
+        f"{candle_note}"
     )
 
 
