@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 from app.config.loader import ConfigurationError, load_config
+from app.data.binance_futures import BinanceFuturesClient
 from app.data.capital import CapitalClient
 from app.data.manager import DataProviderManager
 from app.data.mt5 import Mt5Client, Mt5Error
@@ -117,6 +118,26 @@ def build_scanner(
             if capital is not None:
                 capital.close()
             providers.mark_unavailable("capital", str(exc))
+    binance_config = config.get("binance_futures", {})
+    if isinstance(binance_config, dict) and binance_config.get("enabled", False):
+        logger.info("Binance Futures provider enabled")
+        binance: BinanceFuturesClient | None = None
+        try:
+            binance = BinanceFuturesClient(
+                base_url=str(binance_config.get("base_url", BinanceFuturesClient.DEFAULT_BASE_URL)),
+                timeout_seconds=binance_config.get(
+                    "timeout_seconds", config["data"]["timeout_seconds"]
+                ),
+                retries=binance_config.get("retries", 2),
+                logger=logger,
+            )
+            binance.connect()
+            providers.add_provider("binance_futures", binance)
+        except Exception as exc:
+            logger.error("Binance Futures provider unavailable: %s", exc)
+            if binance is not None:
+                binance.close()
+            providers.mark_unavailable("binance_futures", str(exc))
     telegram_config = config["alerts"]["telegram"]
     notifier = TelegramNotifier(
         bot_token=os.environ.get("TELEGRAM_BOT_TOKEN"),
@@ -143,7 +164,7 @@ def startup_message(scanner: Scanner, symbols: list[ScanTarget]) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Scan OANDA, MT5, and Capital.com confirmed 1H engulfing signals"
+        description="Scan OANDA, MT5, Capital.com, and Binance Futures confirmed 1H engulfing signals"
     )
     parser.add_argument("--config", default=str(PROJECT_ROOT / "config" / "config.yaml"))
     parser.add_argument("--once", action="store_true", help="scan once instead of running continuously")
@@ -152,6 +173,11 @@ def main() -> None:
         "--capital-search",
         metavar="QUERY",
         help="list Capital.com symbols matching QUERY and exit",
+    )
+    parser.add_argument(
+        "--binance-search",
+        metavar="QUERY",
+        help="list Binance Futures symbols matching QUERY and exit",
     )
     args = parser.parse_args()
 
@@ -183,6 +209,9 @@ def main() -> None:
                 return
             if args.capital_search is not None:
                 print(scanner.search_symbols("capital", args.capital_search))
+                return
+            if args.binance_search is not None:
+                print(scanner.search_symbols("binance_futures", args.binance_search))
                 return
             if notifier.enabled:
                 try:

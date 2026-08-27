@@ -85,7 +85,7 @@ class Scanner:
         else:
             self._append_discovered(targets, "oanda")
 
-        for provider in ("mt5", "capital"):
+        for provider in ("mt5", "capital", "binance_futures"):
             provider_config = self.config.get(provider, {})
             if isinstance(provider_config, dict) and provider_config.get("enabled", False):
                 self._append_configured_targets(targets, provider, provider_config)

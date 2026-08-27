@@ -52,6 +52,7 @@ def test_help_aliases_reply_with_command_list():
         assert "/health" in notifier.messages[-1][0]
         assert "/scan" in notifier.messages[-1][0]
         assert "/capitalsymbols" in notifier.messages[-1][0]
+        assert "/binancesymbols" in notifier.messages[-1][0]
 
 
 def test_health_and_symbols_commands_reply():

@@ -56,6 +56,26 @@ capital:
     1d: 100
   timeout_seconds: 10
   retries: 2
+
+# Binance USD-M Futures uses public REST endpoints only (no API keys required).
+binance_futures:
+  enabled: false
+  symbol_mode: "manual"
+  symbols:
+    - "BTCUSDT"
+    - "ETHUSDT"
+  all_mode_filter:
+    include_patterns:
+      - "*USDT"
+    exclude_patterns: []
+  history:
+    1h: 200
+    4h: 100
+    1d: 100
+  timeout_seconds: 10
+  retries: 2
+  base_url: "https://fapi.binance.com"
+
 strategy:
   signal_timeframe: "1h"
   confirmation_4h: "4h"

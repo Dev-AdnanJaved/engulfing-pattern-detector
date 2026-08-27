@@ -48,7 +48,7 @@ def _validate_config(config: dict[str, Any]) -> None:
                 isinstance(entry, dict)
                 and isinstance(entry.get("symbol"), str)
                 and entry["symbol"]
-                and entry.get("provider", "oanda") in {"oanda", "mt5", "capital"}
+                and entry.get("provider", "oanda") in {"oanda", "mt5", "capital", "binance_futures"}
             ):
                 continue
             raise ConfigurationError(
@@ -125,7 +125,7 @@ def _validate_config(config: dict[str, Any]) -> None:
     ):
         raise ConfigurationError("logging.file_path must be set when file logging is enabled")
 
-    for provider in ("oanda", "mt5", "capital"):
+    for provider in ("oanda", "mt5", "capital", "binance_futures"):
         provider_config = config.get(provider)
         if provider_config is not None:
             _validate_optional_provider(provider, provider_config)
@@ -181,3 +181,25 @@ def _validate_optional_provider(provider: str, provider_config: Any) -> None:
         retries = provider_config.get("retries")
         if retries is not None and (not isinstance(retries, int) or retries < 0):
             raise ConfigurationError("capital.retries must be a non-negative integer")
+    if provider in {"mt5", "binance_futures"}:
+        history = provider_config.get("history")
+        if history is not None:
+            if not isinstance(history, dict):
+                raise ConfigurationError(f"{provider}.history must be a mapping")
+            for timeframe in ("1h", "4h", "1d"):
+                if not isinstance(history.get(timeframe), int) or history[timeframe] < 3:
+                    raise ConfigurationError(
+                        f"{provider}.history.{timeframe} must be an integer of at least 3"
+                    )
+        timeout = provider_config.get("timeout_seconds")
+        if timeout is not None and (
+            not isinstance(timeout, (int, float)) or timeout <= 0
+        ):
+            raise ConfigurationError(f"{provider}.timeout_seconds must be greater than zero")
+        retries = provider_config.get("retries")
+        if retries is not None and (not isinstance(retries, int) or retries < 0):
+            raise ConfigurationError(f"{provider}.retries must be a non-negative integer")
+        if provider == "binance_futures":
+            base_url = provider_config.get("base_url", "https://fapi.binance.com")
+            if not isinstance(base_url, str) or not base_url:
+                raise ConfigurationError("binance_futures.base_url must be a non-empty URL")
