@@ -104,6 +104,9 @@ def _validate_config(config: dict[str, Any]) -> None:
     telegram = alerts.get("telegram")
     if not isinstance(telegram, dict) or not isinstance(telegram.get("enabled"), bool):
         raise ConfigurationError("alerts.telegram.enabled must be true or false")
+    if "status_updates" in telegram and not isinstance(telegram.get("status_updates"), bool):
+        raise ConfigurationError("alerts.telegram.status_updates must be true or false")
+    telegram.setdefault("status_updates", False)
     cooldown = alerts.get("cooldown_minutes", 0)
     if not isinstance(cooldown, (int, float)) or cooldown < 0:
         raise ConfigurationError("alerts.cooldown_minutes must be a non-negative number")

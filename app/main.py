@@ -160,7 +160,13 @@ def main() -> None:
         config = load_config(args.config)
         logger = configure_logging(config, PROJECT_ROOT)
         scanner, database, notifier, providers = build_scanner(config, PROJECT_ROOT, logger)
-        scanner.status_notifier = lambda message: notifier.send_message(message, parse_mode="Markdown")
+        if config["alerts"]["telegram"].get("status_updates", False):
+            scanner.status_notifier = lambda message: notifier.send_message(
+                message, parse_mode="Markdown"
+            )
+        else:
+            scanner.status_notifier = None
+            logger.info("Telegram scan status updates disabled; only trade signals will be sent")
         command_poller: TelegramCommandPoller | None = None
         startup_sent = False
 

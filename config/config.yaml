@@ -83,6 +83,9 @@ data:
 alerts:
   telegram:
     enabled: true
+    # Scan started/completed/waiting messages. Keep false so only real
+    # trade signals (and startup/stop) go to Telegram.
+    status_updates: false
   cooldown_minutes: 60
 
 storage:
