@@ -6,6 +6,7 @@ from app.notifications.telegram_commands import TelegramCommandPoller
 class FakeNotifier:
     enabled = True
     chat_id = "12345"
+    chat_ids = ["12345"]
 
     def __init__(self):
         self.messages = []

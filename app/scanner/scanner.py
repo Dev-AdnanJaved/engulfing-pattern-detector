@@ -158,16 +158,17 @@ class Scanner:
         candle_key = latest_closed.timestamp.isoformat()
         already_processed_closed = self._last_processed.get(processed_key) == candle_key
 
-        needs_confirmation = False
-        if not already_processed_closed and len(closed_1h) >= 2:
+        closed_setup = False
+        if len(closed_1h) >= 2:
             previous, current = closed_1h[-2:]
-            if _has_engulfing_pattern(previous, current, pattern_config, require_closed=True):
-                needs_confirmation = True
+            closed_setup = _has_engulfing_pattern(
+                previous, current, pattern_config, require_closed=True
+            )
 
         forming = one_hour[-1] if one_hour and not one_hour[-1].is_closed else None
+        early_setup = False
         if (
-            not needs_confirmation
-            and early_minutes > 0
+            early_minutes > 0
             and forming is not None
             and _has_engulfing_pattern(
                 closed_1h[-1], forming, pattern_config, require_closed=False
@@ -175,8 +176,14 @@ class Scanner:
         ):
             minutes_left = minutes_until_close(forming, strategy_config["signal_timeframe"])
             if minutes_left is not None and 0 < minutes_left <= early_minutes:
-                needs_confirmation = True
+                early_setup = True
 
+        if closed_setup or early_setup:
+            self.logger.info("Setup detected for %s via %s", symbol, provider.upper())
+        else:
+            self.logger.info("Setup not detected for %s via %s", symbol, provider.upper())
+
+        needs_confirmation = (closed_setup and not already_processed_closed) or early_setup
         if not needs_confirmation:
             if not already_processed_closed:
                 self._last_processed[processed_key] = candle_key
@@ -291,16 +298,9 @@ class Scanner:
         remaining = max(0, int(interval_seconds))
         if remaining <= 0:
             return
-        self.logger.info("Waiting for next scan in %s seconds...", remaining)
-        self._notify_status(f"⏳ Waiting for next scan in *{remaining}* seconds...")
-        while remaining > 0 and not self._stop_event.is_set():
-            if self._stop_event.wait(1):
-                break
-            remaining -= 1
-            if remaining <= 0:
-                break
-            # Log every second so the console shows the live countdown.
-            self.logger.info("Waiting for next scan in %s seconds...", remaining)
+        self.logger.info("Will scan again in %s seconds...", remaining)
+        self._notify_status(f"⏳ Will scan again in *{remaining}* seconds...")
+        self._stop_event.wait(remaining)
 
     def stop(self) -> None:
         self._stop_event.set()

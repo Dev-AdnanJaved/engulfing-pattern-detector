@@ -69,7 +69,7 @@ class TelegramCommandPoller:
         text = message.get("text")
         if not isinstance(chat, dict) or not isinstance(text, str):
             return
-        if str(chat.get("id")) != str(self.notifier.chat_id):
+        if str(chat.get("id")) not in {str(item) for item in self.notifier.chat_ids}:
             self.logger.warning("Ignoring Telegram command from unauthorized chat")
             return
         command = text.strip().split()[0].lower() if text.strip() else ""

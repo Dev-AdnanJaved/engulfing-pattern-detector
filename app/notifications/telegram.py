@@ -27,13 +27,17 @@ class TelegramNotifier:
         logger: Optional[logging.Logger] = None,
     ) -> None:
         self.bot_token = bot_token
-        self.chat_id = chat_id
+        self.chat_ids = _parse_chat_ids(chat_id)
+        # Primary chat kept for backward-compatible single-chat access.
+        self.chat_id = self.chat_ids[0] if self.chat_ids else None
         self.enabled = enabled
         self.timeout_seconds = timeout_seconds
         self.retries = retries
         self.logger = logger or logging.getLogger(__name__)
-        if self.enabled and (not self.bot_token or not self.chat_id):
-            raise ValueError("TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are required when Telegram is enabled")
+        if self.enabled and (not self.bot_token or not self.chat_ids):
+            raise ValueError(
+                "TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are required when Telegram is enabled"
+            )
 
     def send_signal(self, signal: Signal) -> bool:
         if not self.enabled:
@@ -43,18 +47,34 @@ class TelegramNotifier:
     def send_message(self, text: str, parse_mode: Optional[str] = None) -> bool:
         if not self.enabled:
             return False
-        payload = urlencode(
-            {
-                "chat_id": self.chat_id,
-                "text": text,
-                **({"parse_mode": parse_mode} if parse_mode else {}),
-                "disable_web_page_preview": "true",
-            }
-        ).encode("utf-8")
-        result = self._api_request("sendMessage", payload, timeout=self.timeout_seconds)
-        if result.get("ok") is not True:
-            raise TelegramError(f"Telegram rejected message: {result}")
-        return True
+        sent_any = False
+        errors: list[str] = []
+        for chat_id in self.chat_ids:
+            try:
+                payload = urlencode(
+                    {
+                        "chat_id": chat_id,
+                        "text": text,
+                        **({"parse_mode": parse_mode} if parse_mode else {}),
+                        "disable_web_page_preview": "true",
+                    }
+                ).encode("utf-8")
+                result = self._api_request("sendMessage", payload, timeout=self.timeout_seconds)
+                if result.get("ok") is not True:
+                    errors.append(f"{chat_id}: {result}")
+                    continue
+                sent_any = True
+            except TelegramError as exc:
+                errors.append(f"{chat_id}: {exc}")
+        if errors:
+            detail = "; ".join(errors)
+            if not sent_any:
+                raise TelegramError(f"Telegram rejected message for all chats: {detail}")
+            self.logger.warning("Telegram message partially failed: %s", detail)
+        return sent_any
+
+    def is_authorized_chat(self, chat_id: Any) -> bool:
+        return str(chat_id) in {str(item) for item in self.chat_ids}
 
     def get_updates(self, offset: int = 0, timeout: int = 25) -> list[dict[str, Any]]:
         if not self.enabled:
@@ -157,3 +177,9 @@ def format_signal(signal: Signal) -> str:
 
 def _format_price(value: float) -> str:
     return f"{value:.5f}".rstrip("0").rstrip(".")
+
+def _parse_chat_ids(chat_id: Optional[str]) -> list[str]:
+    if not chat_id:
+        return []
+    return [part.strip() for part in str(chat_id).replace(";", ",").split(",") if part.strip()]
+

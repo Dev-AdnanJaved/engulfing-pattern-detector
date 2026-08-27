@@ -15,7 +15,7 @@ There are no extra indicators, scoring rules, orders, execution, dashboard, Redi
    - `OANDA_API_KEY`
    - `OANDA_ACCOUNT_ID`
    - `TELEGRAM_BOT_TOKEN`
-   - `TELEGRAM_CHAT_ID`
+   - `TELEGRAM_CHAT_ID` (one ID, or several comma-separated)
    - `MT5_LOGIN` (only when MT5 is enabled)
    - `MT5_PASSWORD` (only when MT5 is enabled)
    - `MT5_SERVER` (only when MT5 is enabled)
