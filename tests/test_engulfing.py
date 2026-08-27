@@ -69,3 +69,11 @@ def test_open_candle_allowed_when_require_closed_false():
         candle(99, 106, closed=False),
         require_closed=False,
     )
+
+
+def test_touching_bodies_fail_when_strict_engulfing_enabled():
+    assert not is_bullish_engulfing(candle(105, 100), candle(100, 106), strict=True)
+
+
+def test_touching_bodies_pass_when_strict_engulfing_disabled():
+    assert is_bullish_engulfing(candle(105, 100), candle(100, 106), strict=False)

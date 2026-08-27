@@ -66,6 +66,8 @@ pattern:
   bearish_engulfing: true
   body_only: true
   reject_doji: true
+  # Require the current body to fully overlap the previous body (no touching).
+  strict_engulfing: true
   # Alert while the 1H candle is still open if engulfing is already formed
   # and fewer than N minutes remain until the candle closes.
   early_detection:

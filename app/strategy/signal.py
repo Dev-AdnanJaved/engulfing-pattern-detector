@@ -50,6 +50,7 @@ def evaluate_signal(
     early_minutes_before_close: int = 0,
     now: datetime | None = None,
     include_closed: bool = True,
+    strict_engulfing: bool = True,
 ) -> Optional[Signal]:
     if four_hour_candle is None or one_day_candle is None:
         return None
@@ -79,6 +80,7 @@ def evaluate_signal(
             require_closed=True,
             candle_closed=True,
             minutes_to_close=None,
+            strict_engulfing=strict_engulfing,
         )
         if closed is not None:
             return closed
@@ -111,6 +113,7 @@ def evaluate_signal(
         require_closed=False,
         candle_closed=False,
         minutes_to_close=max(1, int(math.ceil(minutes_left))),
+        strict_engulfing=strict_engulfing,
     )
 
 
@@ -166,9 +169,14 @@ def _match_engulfing_signal(
     require_closed: bool,
     candle_closed: bool,
     minutes_to_close: int | None,
+    strict_engulfing: bool = True,
 ) -> Optional[Signal]:
     if bullish_enabled and is_bullish_engulfing(
-        previous, current, reject_doji, require_closed=require_closed
+        previous,
+        current,
+        reject_doji,
+        require_closed=require_closed,
+        strict=strict_engulfing,
     ):
         if h4_direction == "bullish" and d1_direction == "bullish":
             return _build_signal(
@@ -187,7 +195,11 @@ def _match_engulfing_signal(
             )
 
     if bearish_enabled and is_bearish_engulfing(
-        previous, current, reject_doji, require_closed=require_closed
+        previous,
+        current,
+        reject_doji,
+        require_closed=require_closed,
+        strict=strict_engulfing,
     ):
         if h4_direction == "bearish" and d1_direction == "bearish":
             return _build_signal(

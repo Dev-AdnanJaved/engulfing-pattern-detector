@@ -74,6 +74,9 @@ def _validate_config(config: dict[str, Any]) -> None:
             raise ConfigurationError(f"pattern.{key} must be true or false")
     if pattern["body_only"] is not True:
         raise ConfigurationError("pattern.body_only must remain true for this strategy")
+    if "strict_engulfing" in pattern and not isinstance(pattern.get("strict_engulfing"), bool):
+        raise ConfigurationError("pattern.strict_engulfing must be true or false")
+    pattern.setdefault("strict_engulfing", True)
     early = pattern.get("early_detection", {})
     if early is None:
         early = {}

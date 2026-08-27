@@ -153,6 +153,7 @@ class Scanner:
             return
 
         reject_doji = pattern_config["reject_doji"]
+        strict_engulfing = bool(pattern_config.get("strict_engulfing", True))
         processed_key = (provider, symbol)
         latest_closed = closed_1h[-1]
         candle_key = latest_closed.timestamp.isoformat()
@@ -162,7 +163,7 @@ class Scanner:
         if len(closed_1h) >= 2:
             previous, current = closed_1h[-2:]
             closed_setup = _has_engulfing_pattern(
-                previous, current, pattern_config, require_closed=True
+                previous, current, pattern_config, require_closed=True, strict=strict_engulfing
             )
 
         forming = one_hour[-1] if one_hour and not one_hour[-1].is_closed else None
@@ -171,7 +172,7 @@ class Scanner:
             early_minutes > 0
             and forming is not None
             and _has_engulfing_pattern(
-                closed_1h[-1], forming, pattern_config, require_closed=False
+                closed_1h[-1], forming, pattern_config, require_closed=False, strict=strict_engulfing
             )
         ):
             minutes_left = minutes_until_close(forming, strategy_config["signal_timeframe"])
@@ -179,7 +180,21 @@ class Scanner:
                 early_setup = True
 
         if closed_setup or early_setup:
-            self.logger.info("Setup detected for %s via %s", symbol, provider.upper())
+            if len(closed_1h) >= 2:
+                previous, current = closed_1h[-2], (
+                    forming if early_setup and forming is not None else closed_1h[-1]
+                )
+                self.logger.info(
+                    "Setup detected for %s via %s (prev O=%s C=%s | curr O=%s C=%s)",
+                    symbol,
+                    provider.upper(),
+                    previous.open,
+                    previous.close,
+                    current.open,
+                    current.close,
+                )
+            else:
+                self.logger.info("Setup detected for %s via %s", symbol, provider.upper())
         else:
             self.logger.info("Setup not detected for %s via %s", symbol, provider.upper())
 
@@ -230,6 +245,7 @@ class Scanner:
             provider=provider,
             early_minutes_before_close=early_minutes,
             include_closed=not already_processed_closed,
+            strict_engulfing=strict_engulfing,
         )
         if signal is None:
             return
@@ -530,13 +546,14 @@ def _has_engulfing_pattern(
     pattern_config: dict[str, Any],
     *,
     require_closed: bool,
+    strict: bool = True,
 ) -> bool:
     reject_doji = pattern_config["reject_doji"]
     bullish = pattern_config["bullish_engulfing"] and is_bullish_engulfing(
-        previous, current, reject_doji, require_closed=require_closed
+        previous, current, reject_doji, require_closed=require_closed, strict=strict
     )
     bearish = pattern_config["bearish_engulfing"] and is_bearish_engulfing(
-        previous, current, reject_doji, require_closed=require_closed
+        previous, current, reject_doji, require_closed=require_closed, strict=strict
     )
     return bullish or bearish
 
