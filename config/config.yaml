@@ -1,0 +1,89 @@
+app:
+  name: "1H Engulfing Scanner"
+  environment: "development"
+
+oanda:
+  enabled: true
+
+scanner:
+  enabled: true
+  symbol_mode: "all"
+  symbols:
+    - "XAU_USD"
+    - "EUR_USD"
+    - "GBP_USD"
+    - "USD_JPY"
+  scan_interval_seconds: 900
+  volume_filter:
+    enabled: false
+    minimum_24h_volume_usd: 5000000
+
+# MT5 is optional and read-only. It requires the official MetaTrader5 Python
+# package plus a locally installed, logged-in MT5 terminal.
+mt5:
+  enabled: false
+  symbol_mode: "manual"
+  symbols:
+    - "US100"
+  # Required for all mode so thousands of irrelevant terminal symbols are not
+  # scanned accidentally. Use the exact names or patterns discovered in logs.
+  all_mode_filter:
+    include_patterns:
+      - "US*"
+      - "NAS*"
+    exclude_patterns: []
+
+# Capital.com is optional, read-only, and uses the official demo API.
+# Put the exact epic returned by --capital-search / /capitalsymbols in
+# capital_symbols, rather than assuming a friendly name such as US100 is a
+# valid epic.
+capital:
+  enabled: true
+  symbol_mode: "manual"
+  symbols:
+    - "US100"
+  capital_symbols:
+    US100:
+      epic: "US100"
+  all_mode_filter:
+    include_patterns:
+      - "US*"
+      - "NAS*"
+    exclude_patterns: []
+  history:
+    1h: 200
+    4h: 100
+    1d: 100
+  timeout_seconds: 10
+  retries: 2
+strategy:
+  signal_timeframe: "1h"
+  confirmation_4h: "4h"
+  confirmation_1d: "1d"
+
+pattern:
+  bullish_engulfing: true
+  bearish_engulfing: true
+  body_only: true
+  reject_doji: true
+
+data:
+  provider: "oanda"
+  history:
+    1h: 200
+    4h: 100
+    1d: 100
+  timeout_seconds: 10
+
+alerts:
+  telegram:
+    enabled: true
+  cooldown_minutes: 60
+
+storage:
+  database: "data/scanner.db"
+
+logging:
+  level: "INFO"
+  file_enabled: true
+  file_path: "logs/scanner.log"

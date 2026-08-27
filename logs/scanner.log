@@ -1,0 +1,1408 @@
+2026-08-26 18:04:34,783 INFO scanner Loaded 4 symbols
+2026-08-26 18:04:39,627 INFO scanner Telegram startup notification sent
+2026-08-26 18:04:40,197 INFO scanner Telegram command polling started
+2026-08-26 18:04:40,197 INFO scanner Scanner started
+2026-08-26 18:04:40,197 INFO scanner Checking XAU_USD
+2026-08-26 18:04:40,507 INFO scanner New 1H candle detected for XAU_USD
+2026-08-26 18:04:40,508 INFO scanner Checking EUR_USD
+2026-08-26 18:04:40,756 INFO scanner New 1H candle detected for EUR_USD
+2026-08-26 18:04:41,773 INFO scanner Checking GBP_USD
+2026-08-26 18:04:42,380 INFO scanner New 1H candle detected for GBP_USD
+2026-08-26 18:04:42,380 INFO scanner Checking USD_JPY
+2026-08-26 18:04:42,680 INFO scanner New 1H candle detected for USD_JPY
+2026-08-26 18:05:12,681 INFO scanner Checking XAU_USD
+2026-08-26 18:05:13,467 INFO scanner Checking EUR_USD
+2026-08-26 18:05:13,688 INFO scanner Checking GBP_USD
+2026-08-26 18:05:14,097 INFO scanner Checking USD_JPY
+2026-08-26 18:05:44,545 INFO scanner Checking XAU_USD
+2026-08-26 18:05:44,807 INFO scanner Checking EUR_USD
+2026-08-26 18:05:45,130 INFO scanner Checking GBP_USD
+2026-08-26 18:05:45,552 INFO scanner Checking USD_JPY
+2026-08-26 18:06:15,928 INFO scanner Checking XAU_USD
+2026-08-26 18:06:16,256 INFO scanner Checking EUR_USD
+2026-08-26 18:06:16,530 INFO scanner Checking GBP_USD
+2026-08-26 18:06:16,874 INFO scanner Checking USD_JPY
+2026-08-26 18:06:47,145 INFO scanner Checking XAU_USD
+2026-08-26 18:06:47,627 INFO scanner Checking EUR_USD
+2026-08-26 18:06:47,846 INFO scanner Checking GBP_USD
+2026-08-26 18:06:48,217 INFO scanner Checking USD_JPY
+2026-08-26 18:07:18,490 INFO scanner Checking XAU_USD
+2026-08-26 18:07:18,766 INFO scanner Checking EUR_USD
+2026-08-26 18:07:19,028 INFO scanner Checking GBP_USD
+2026-08-26 18:07:19,327 INFO scanner Checking USD_JPY
+2026-08-26 18:07:49,591 INFO scanner Checking XAU_USD
+2026-08-26 18:07:49,892 INFO scanner Checking EUR_USD
+2026-08-26 18:07:50,211 INFO scanner Checking GBP_USD
+2026-08-26 18:07:50,514 INFO scanner Checking USD_JPY
+2026-08-26 18:08:20,789 INFO scanner Checking XAU_USD
+2026-08-26 18:08:21,010 INFO scanner Checking EUR_USD
+2026-08-26 18:08:21,296 INFO scanner Checking GBP_USD
+2026-08-26 18:08:21,616 INFO scanner Checking USD_JPY
+2026-08-26 18:08:51,847 INFO scanner Checking XAU_USD
+2026-08-26 18:08:52,062 INFO scanner Checking EUR_USD
+2026-08-26 18:08:52,418 INFO scanner Checking GBP_USD
+2026-08-26 18:08:52,683 INFO scanner Checking USD_JPY
+2026-08-26 18:09:22,968 INFO scanner Checking XAU_USD
+2026-08-26 18:09:23,213 INFO scanner Checking EUR_USD
+2026-08-26 18:09:23,454 INFO scanner Checking GBP_USD
+2026-08-26 18:09:23,660 INFO scanner Checking USD_JPY
+2026-08-26 18:09:54,006 INFO scanner Checking XAU_USD
+2026-08-26 18:09:54,254 INFO scanner Checking EUR_USD
+2026-08-26 18:09:54,478 INFO scanner Checking GBP_USD
+2026-08-26 18:09:54,750 INFO scanner Checking USD_JPY
+2026-08-26 18:10:25,041 INFO scanner Checking XAU_USD
+2026-08-26 18:10:25,264 INFO scanner Checking EUR_USD
+2026-08-26 18:10:25,537 INFO scanner Checking GBP_USD
+2026-08-26 18:10:25,905 INFO scanner Checking USD_JPY
+2026-08-26 18:10:56,159 INFO scanner Checking XAU_USD
+2026-08-26 18:10:56,915 INFO scanner Checking EUR_USD
+2026-08-26 18:10:57,288 INFO scanner Checking GBP_USD
+2026-08-26 18:10:57,639 INFO scanner Checking USD_JPY
+2026-08-26 18:11:28,023 INFO scanner Checking XAU_USD
+2026-08-26 18:11:28,232 INFO scanner Checking EUR_USD
+2026-08-26 18:11:28,486 INFO scanner Checking GBP_USD
+2026-08-26 18:11:28,792 INFO scanner Checking USD_JPY
+2026-08-26 18:12:00,128 INFO scanner Checking XAU_USD
+2026-08-26 18:12:00,409 INFO scanner Checking EUR_USD
+2026-08-26 18:12:00,703 INFO scanner Checking GBP_USD
+2026-08-26 18:12:01,312 INFO scanner Checking USD_JPY
+2026-08-26 18:12:31,674 INFO scanner Checking XAU_USD
+2026-08-26 18:12:31,972 INFO scanner Checking EUR_USD
+2026-08-26 18:12:32,268 INFO scanner Checking GBP_USD
+2026-08-26 18:12:32,533 INFO scanner Checking USD_JPY
+2026-08-26 18:13:02,766 INFO scanner Checking XAU_USD
+2026-08-26 18:13:02,975 INFO scanner Checking EUR_USD
+2026-08-26 18:13:03,319 INFO scanner Checking GBP_USD
+2026-08-26 18:13:03,793 INFO scanner Checking USD_JPY
+2026-08-26 18:13:34,156 INFO scanner Checking XAU_USD
+2026-08-26 18:13:34,754 INFO scanner Checking EUR_USD
+2026-08-26 18:13:35,087 INFO scanner Checking GBP_USD
+2026-08-26 18:13:35,328 INFO scanner Checking USD_JPY
+2026-08-26 18:14:05,552 INFO scanner Checking XAU_USD
+2026-08-26 18:14:05,837 INFO scanner Checking EUR_USD
+2026-08-26 18:14:06,118 INFO scanner Checking GBP_USD
+2026-08-26 18:14:06,365 INFO scanner Checking USD_JPY
+2026-08-26 18:21:53,856 INFO scanner Loaded 4 symbols
+2026-08-26 18:22:01,272 INFO scanner Telegram startup notification sent
+2026-08-26 18:22:01,841 INFO scanner Telegram command polling started
+2026-08-26 18:22:01,841 INFO scanner Scanner started
+2026-08-26 18:22:01,841 INFO scanner Checking XAU_USD
+2026-08-26 18:22:02,115 INFO scanner New 1H candle detected for XAU_USD
+2026-08-26 18:22:02,115 INFO scanner Checking EUR_USD
+2026-08-26 18:22:02,389 INFO scanner New 1H candle detected for EUR_USD
+2026-08-26 18:22:03,154 INFO scanner Checking GBP_USD
+2026-08-26 18:22:03,446 INFO scanner New 1H candle detected for GBP_USD
+2026-08-26 18:22:03,447 INFO scanner Checking USD_JPY
+2026-08-26 18:22:03,667 INFO scanner New 1H candle detected for USD_JPY
+2026-08-26 18:22:33,667 INFO scanner Checking XAU_USD
+2026-08-26 18:22:33,923 INFO scanner Checking EUR_USD
+2026-08-26 18:22:34,284 INFO scanner Checking GBP_USD
+2026-08-26 18:22:34,495 INFO scanner Checking USD_JPY
+2026-08-26 18:23:04,783 INFO scanner Checking XAU_USD
+2026-08-26 18:23:05,101 INFO scanner Checking EUR_USD
+2026-08-26 18:23:05,662 INFO scanner Checking GBP_USD
+2026-08-26 18:23:05,900 INFO scanner Checking USD_JPY
+2026-08-26 18:23:36,168 INFO scanner Checking XAU_USD
+2026-08-26 18:23:36,441 INFO scanner Checking EUR_USD
+2026-08-26 18:23:36,726 INFO scanner Checking GBP_USD
+2026-08-26 18:23:37,073 INFO scanner Checking USD_JPY
+2026-08-26 18:24:07,401 INFO scanner Checking XAU_USD
+2026-08-26 18:24:07,714 INFO scanner Checking EUR_USD
+2026-08-26 18:24:08,139 INFO scanner Checking GBP_USD
+2026-08-26 18:24:08,482 INFO scanner Checking USD_JPY
+2026-08-26 18:24:39,149 INFO scanner Checking XAU_USD
+2026-08-26 18:24:39,504 INFO scanner Checking EUR_USD
+2026-08-26 18:24:39,812 INFO scanner Checking GBP_USD
+2026-08-26 18:24:40,046 INFO scanner Checking USD_JPY
+2026-08-26 18:25:10,285 INFO scanner Checking XAU_USD
+2026-08-26 18:25:10,675 INFO scanner Checking EUR_USD
+2026-08-26 18:25:11,737 INFO scanner Checking GBP_USD
+2026-08-26 18:25:12,024 INFO scanner Checking USD_JPY
+2026-08-26 18:25:42,313 INFO scanner Checking XAU_USD
+2026-08-26 18:25:42,634 INFO scanner Checking EUR_USD
+2026-08-26 18:25:42,916 INFO scanner Checking GBP_USD
+2026-08-26 18:25:43,260 INFO scanner Checking USD_JPY
+2026-08-26 18:26:10,955 INFO scanner Checking XAU_USD
+2026-08-26 18:26:11,277 INFO scanner Checking EUR_USD
+2026-08-26 18:26:11,533 INFO scanner Checking GBP_USD
+2026-08-26 18:26:11,798 INFO scanner Checking USD_JPY
+2026-08-26 18:26:13,473 INFO scanner Checking XAU_USD
+2026-08-26 18:26:13,874 INFO scanner Checking EUR_USD
+2026-08-26 18:26:14,217 INFO scanner Checking GBP_USD
+2026-08-26 18:26:14,437 INFO scanner Checking USD_JPY
+2026-08-26 18:26:44,729 INFO scanner Checking XAU_USD
+2026-08-26 18:26:44,970 INFO scanner Checking EUR_USD
+2026-08-26 18:26:45,267 INFO scanner Checking GBP_USD
+2026-08-26 18:26:45,537 INFO scanner Checking USD_JPY
+2026-08-26 18:27:15,897 INFO scanner Checking XAU_USD
+2026-08-26 18:27:16,182 INFO scanner Checking EUR_USD
+2026-08-26 18:27:16,425 INFO scanner Checking GBP_USD
+2026-08-26 18:27:16,754 INFO scanner Checking USD_JPY
+2026-08-26 18:27:47,046 INFO scanner Checking XAU_USD
+2026-08-26 18:27:47,322 INFO scanner Checking EUR_USD
+2026-08-26 18:27:47,649 INFO scanner Checking GBP_USD
+2026-08-26 18:27:47,943 INFO scanner Checking USD_JPY
+2026-08-26 18:28:18,231 INFO scanner Checking XAU_USD
+2026-08-26 18:28:18,482 INFO scanner Checking EUR_USD
+2026-08-26 18:28:18,712 INFO scanner Checking GBP_USD
+2026-08-26 18:28:18,944 INFO scanner Checking USD_JPY
+2026-08-26 18:28:49,182 INFO scanner Checking XAU_USD
+2026-08-26 18:28:49,437 INFO scanner Checking EUR_USD
+2026-08-26 18:28:49,718 INFO scanner Checking GBP_USD
+2026-08-26 18:28:49,992 INFO scanner Checking USD_JPY
+2026-08-26 18:29:20,209 INFO scanner Checking XAU_USD
+2026-08-26 18:29:20,614 INFO scanner Checking EUR_USD
+2026-08-26 18:29:21,047 INFO scanner Checking GBP_USD
+2026-08-26 18:29:21,285 INFO scanner Checking USD_JPY
+2026-08-26 18:29:51,562 INFO scanner Checking XAU_USD
+2026-08-26 18:29:51,987 INFO scanner Checking EUR_USD
+2026-08-26 18:29:52,303 INFO scanner Checking GBP_USD
+2026-08-26 18:29:52,577 INFO scanner Checking USD_JPY
+2026-08-26 18:30:22,891 INFO scanner Checking XAU_USD
+2026-08-26 18:30:23,267 INFO scanner Checking EUR_USD
+2026-08-26 18:30:23,542 INFO scanner Checking GBP_USD
+2026-08-26 18:30:23,761 INFO scanner Checking USD_JPY
+2026-08-26 18:30:55,350 INFO scanner Checking XAU_USD
+2026-08-26 18:30:55,589 INFO scanner Checking EUR_USD
+2026-08-26 18:30:55,825 INFO scanner Checking GBP_USD
+2026-08-26 18:30:56,205 INFO scanner Checking USD_JPY
+2026-08-26 18:31:26,414 INFO scanner Checking XAU_USD
+2026-08-26 18:31:26,794 INFO scanner Checking EUR_USD
+2026-08-26 18:31:27,058 INFO scanner Checking GBP_USD
+2026-08-26 18:31:27,369 INFO scanner Checking USD_JPY
+2026-08-26 18:31:57,719 INFO scanner Checking XAU_USD
+2026-08-26 18:31:58,046 INFO scanner Checking EUR_USD
+2026-08-26 18:31:58,323 INFO scanner Checking GBP_USD
+2026-08-26 18:31:58,564 INFO scanner Checking USD_JPY
+2026-08-26 18:32:28,808 INFO scanner Checking XAU_USD
+2026-08-26 18:32:29,335 INFO scanner Checking EUR_USD
+2026-08-26 18:32:29,673 INFO scanner Checking GBP_USD
+2026-08-26 18:32:29,907 INFO scanner Checking USD_JPY
+2026-08-26 18:32:55,418 INFO scanner Loaded 123 symbols
+2026-08-26 18:34:57,998 INFO scanner Telegram startup notification sent
+2026-08-26 18:34:58,575 INFO scanner Telegram command polling started
+2026-08-26 18:34:58,575 INFO scanner Scanner started
+2026-08-26 18:34:59,179 INFO scanner Checking TRY_JPY
+2026-08-26 18:34:59,539 INFO scanner New 1H candle detected for TRY_JPY
+2026-08-26 18:34:59,539 INFO scanner Checking CHF_JPY
+2026-08-26 18:34:59,780 INFO scanner New 1H candle detected for CHF_JPY
+2026-08-26 18:34:59,780 INFO scanner Checking NZD_SGD
+2026-08-26 18:35:00,017 INFO scanner New 1H candle detected for NZD_SGD
+2026-08-26 18:35:00,017 INFO scanner Checking GBP_NZD
+2026-08-26 18:35:00,307 INFO scanner New 1H candle detected for GBP_NZD
+2026-08-26 18:35:00,307 INFO scanner Checking XAU_CHF
+2026-08-26 18:35:00,526 INFO scanner New 1H candle detected for XAU_CHF
+2026-08-26 18:35:01,110 INFO scanner Checking USD_MXN
+2026-08-26 18:35:01,501 INFO scanner New 1H candle detected for USD_MXN
+2026-08-26 18:35:01,501 INFO scanner Checking GBP_USD
+2026-08-26 18:35:01,766 INFO scanner New 1H candle detected for GBP_USD
+2026-08-26 18:35:01,766 INFO scanner Checking USB05Y_USD
+2026-08-26 18:35:02,067 INFO scanner New 1H candle detected for USB05Y_USD
+2026-08-26 18:35:02,067 INFO scanner Checking UK10YB_GBP
+2026-08-26 18:35:02,333 INFO scanner New 1H candle detected for UK10YB_GBP
+2026-08-26 18:35:02,333 INFO scanner Checking AUD_CAD
+2026-08-26 18:35:02,435 INFO scanner Shutdown signal received: 15
+2026-08-26 18:35:02,791 INFO scanner New 1H candle detected for AUD_CAD
+2026-08-26 18:35:02,791 INFO scanner Checking EUR_PLN
+2026-08-26 18:35:03,068 INFO scanner New 1H candle detected for EUR_PLN
+2026-08-26 18:35:03,069 INFO scanner Checking SUGAR_USD
+2026-08-26 18:35:03,317 INFO scanner New 1H candle detected for SUGAR_USD
+2026-08-26 18:35:03,317 INFO scanner Checking GBP_PLN
+2026-08-26 18:35:03,620 INFO scanner New 1H candle detected for GBP_PLN
+2026-08-26 18:35:03,620 INFO scanner Checking USB02Y_USD
+2026-08-26 18:35:03,899 INFO scanner New 1H candle detected for USB02Y_USD
+2026-08-26 18:35:03,899 INFO scanner Checking ZAR_JPY
+2026-08-26 18:35:04,117 INFO scanner New 1H candle detected for ZAR_JPY
+2026-08-26 18:35:04,117 INFO scanner Checking AUD_USD
+2026-08-26 18:35:04,412 INFO scanner New 1H candle detected for AUD_USD
+2026-08-26 18:35:04,413 INFO scanner Checking NZD_JPY
+2026-08-26 18:35:04,774 INFO scanner New 1H candle detected for NZD_JPY
+2026-08-26 18:35:04,774 INFO scanner Checking GBP_CAD
+2026-08-26 18:35:05,063 INFO scanner New 1H candle detected for GBP_CAD
+2026-08-26 18:35:05,063 INFO scanner Checking UK100_GBP
+2026-08-26 18:35:05,380 INFO scanner New 1H candle detected for UK100_GBP
+2026-08-26 18:35:05,380 INFO scanner Checking XAG_JPY
+2026-08-26 18:35:06,317 INFO scanner Loaded 123 symbols
+2026-08-26 18:35:07,012 INFO scanner Telegram startup notification sent
+2026-08-26 18:35:07,583 INFO scanner Telegram command polling started
+2026-08-26 18:35:07,583 INFO scanner Scanner started
+2026-08-26 18:35:08,247 INFO scanner Checking TRY_JPY
+2026-08-26 18:35:08,544 INFO scanner New 1H candle detected for TRY_JPY
+2026-08-26 18:35:08,544 INFO scanner Checking CHF_JPY
+2026-08-26 18:35:08,831 INFO scanner New 1H candle detected for CHF_JPY
+2026-08-26 18:35:08,831 INFO scanner Checking NZD_SGD
+2026-08-26 18:35:09,122 INFO scanner New 1H candle detected for NZD_SGD
+2026-08-26 18:35:09,122 INFO scanner Checking GBP_NZD
+2026-08-26 18:35:09,423 INFO scanner New 1H candle detected for GBP_NZD
+2026-08-26 18:35:09,423 INFO scanner Checking XAU_CHF
+2026-08-26 18:35:09,707 INFO scanner New 1H candle detected for XAU_CHF
+2026-08-26 18:35:10,376 INFO scanner Checking USD_MXN
+2026-08-26 18:35:10,684 INFO scanner New 1H candle detected for USD_MXN
+2026-08-26 18:35:10,685 INFO scanner Checking GBP_USD
+2026-08-26 18:35:10,924 INFO scanner New 1H candle detected for GBP_USD
+2026-08-26 18:35:10,925 INFO scanner Checking USB05Y_USD
+2026-08-26 18:35:11,230 INFO scanner New 1H candle detected for USB05Y_USD
+2026-08-26 18:35:11,231 INFO scanner Checking UK10YB_GBP
+2026-08-26 18:35:11,519 INFO scanner New 1H candle detected for UK10YB_GBP
+2026-08-26 18:35:11,520 INFO scanner Checking AUD_CAD
+2026-08-26 18:35:11,793 INFO scanner New 1H candle detected for AUD_CAD
+2026-08-26 18:35:11,793 INFO scanner Checking EUR_PLN
+2026-08-26 18:35:12,055 INFO scanner New 1H candle detected for EUR_PLN
+2026-08-26 18:35:12,055 INFO scanner Checking SUGAR_USD
+2026-08-26 18:35:12,376 INFO scanner New 1H candle detected for SUGAR_USD
+2026-08-26 18:35:12,376 INFO scanner Checking GBP_PLN
+2026-08-26 18:35:12,999 INFO scanner New 1H candle detected for GBP_PLN
+2026-08-26 18:35:12,999 INFO scanner Checking USB02Y_USD
+2026-08-26 18:35:13,306 INFO scanner New 1H candle detected for USB02Y_USD
+2026-08-26 18:35:13,307 INFO scanner Checking ZAR_JPY
+2026-08-26 18:35:13,618 INFO scanner New 1H candle detected for ZAR_JPY
+2026-08-26 18:35:13,618 INFO scanner Checking AUD_USD
+2026-08-26 18:35:14,123 INFO scanner New 1H candle detected for AUD_USD
+2026-08-26 18:35:14,123 INFO scanner Checking NZD_JPY
+2026-08-26 18:35:14,418 INFO scanner New 1H candle detected for NZD_JPY
+2026-08-26 18:35:14,419 INFO scanner Checking GBP_CAD
+2026-08-26 18:35:14,686 INFO scanner New 1H candle detected for GBP_CAD
+2026-08-26 18:35:14,687 INFO scanner Checking UK100_GBP
+2026-08-26 18:35:15,071 INFO scanner New 1H candle detected for UK100_GBP
+2026-08-26 18:35:15,072 INFO scanner Checking XAG_JPY
+2026-08-26 18:35:15,329 INFO scanner New 1H candle detected for XAG_JPY
+2026-08-26 18:35:15,329 INFO scanner Checking GBP_ZAR
+2026-08-26 18:35:15,624 INFO scanner New 1H candle detected for GBP_ZAR
+2026-08-26 18:35:15,625 INFO scanner Checking SGD_JPY
+2026-08-26 18:35:15,918 INFO scanner New 1H candle detected for SGD_JPY
+2026-08-26 18:35:15,918 INFO scanner Checking USD_JPY
+2026-08-26 18:35:16,599 INFO scanner New 1H candle detected for USD_JPY
+2026-08-26 18:35:16,599 INFO scanner Checking EUR_TRY
+2026-08-26 18:35:17,137 INFO scanner New 1H candle detected for EUR_TRY
+2026-08-26 18:35:17,137 INFO scanner Checking USD_NOK
+2026-08-26 18:35:17,409 INFO scanner New 1H candle detected for USD_NOK
+2026-08-26 18:35:17,409 INFO scanner Checking EUR_JPY
+2026-08-26 18:35:17,798 INFO scanner New 1H candle detected for EUR_JPY
+2026-08-26 18:35:17,798 INFO scanner Checking AUD_SGD
+2026-08-26 18:35:18,232 INFO scanner New 1H candle detected for AUD_SGD
+2026-08-26 18:35:18,232 INFO scanner Checking XAG_NZD
+2026-08-26 18:35:18,454 INFO scanner New 1H candle detected for XAG_NZD
+2026-08-26 18:35:18,454 INFO scanner Checking WTICO_USD
+2026-08-26 18:35:18,782 INFO scanner New 1H candle detected for WTICO_USD
+2026-08-26 18:35:19,389 INFO scanner Checking XAG_AUD
+2026-08-26 18:35:19,721 INFO scanner New 1H candle detected for XAG_AUD
+2026-08-26 18:35:19,721 INFO scanner Checking EUR_NZD
+2026-08-26 18:35:19,943 INFO scanner New 1H candle detected for EUR_NZD
+2026-08-26 18:35:19,943 INFO scanner Checking GBP_HKD
+2026-08-26 18:35:20,304 INFO scanner New 1H candle detected for GBP_HKD
+2026-08-26 18:35:21,082 INFO scanner Checking EUR_HKD
+2026-08-26 18:35:21,347 INFO scanner New 1H candle detected for EUR_HKD
+2026-08-26 18:35:22,000 INFO scanner Checking XAU_HKD
+2026-08-26 18:35:22,426 INFO scanner New 1H candle detected for XAU_HKD
+2026-08-26 18:35:22,963 INFO scanner Checking XAU_JPY
+2026-08-26 18:35:23,238 INFO scanner New 1H candle detected for XAU_JPY
+2026-08-26 18:35:23,891 INFO scanner Checking USD_THB
+2026-08-26 18:35:24,205 INFO scanner New 1H candle detected for USD_THB
+2026-08-26 18:35:24,205 INFO scanner Checking GBP_CHF
+2026-08-26 18:35:24,517 INFO scanner New 1H candle detected for GBP_CHF
+2026-08-26 18:35:24,517 INFO scanner Checking AUD_CHF
+2026-08-26 18:35:24,853 INFO scanner New 1H candle detected for AUD_CHF
+2026-08-26 18:35:24,853 INFO scanner Checking NZD_CHF
+2026-08-26 18:35:25,134 INFO scanner New 1H candle detected for NZD_CHF
+2026-08-26 18:35:25,134 INFO scanner Checking ESPIX_EUR
+2026-08-26 18:35:25,408 INFO scanner New 1H candle detected for ESPIX_EUR
+2026-08-26 18:35:25,409 INFO scanner Checking AUD_HKD
+2026-08-26 18:35:25,699 INFO scanner New 1H candle detected for AUD_HKD
+2026-08-26 18:35:25,700 INFO scanner Checking XAG_HKD
+2026-08-26 18:35:26,205 INFO scanner New 1H candle detected for XAG_HKD
+2026-08-26 18:35:26,205 INFO scanner Checking USD_CHF
+2026-08-26 18:35:26,426 INFO scanner New 1H candle detected for USD_CHF
+2026-08-26 18:35:26,427 INFO scanner Checking XAG_CHF
+2026-08-26 18:35:26,841 INFO scanner New 1H candle detected for XAG_CHF
+2026-08-26 18:35:26,842 INFO scanner Checking CAD_HKD
+2026-08-26 18:35:27,303 INFO scanner New 1H candle detected for CAD_HKD
+2026-08-26 18:35:27,303 INFO scanner Checking CH20_CHF
+2026-08-26 18:35:27,619 INFO scanner New 1H candle detected for CH20_CHF
+2026-08-26 18:35:27,619 INFO scanner Checking USD_HKD
+2026-08-26 18:35:28,086 INFO scanner New 1H candle detected for USD_HKD
+2026-08-26 18:35:28,086 INFO scanner Checking CHF_HKD
+2026-08-26 18:35:28,367 INFO scanner New 1H candle detected for CHF_HKD
+2026-08-26 18:35:28,367 INFO scanner Checking NZD_USD
+2026-08-26 18:35:28,637 INFO scanner New 1H candle detected for NZD_USD
+2026-08-26 18:35:28,637 INFO scanner Checking EUR_SGD
+2026-08-26 18:35:28,861 INFO scanner New 1H candle detected for EUR_SGD
+2026-08-26 18:35:28,861 INFO scanner Checking GBP_AUD
+2026-08-26 18:35:29,150 INFO scanner New 1H candle detected for GBP_AUD
+2026-08-26 18:35:29,151 INFO scanner Checking USD_PLN
+2026-08-26 18:35:29,450 INFO scanner New 1H candle detected for USD_PLN
+2026-08-26 18:35:29,450 INFO scanner Checking USD_CNH
+2026-08-26 18:35:30,204 INFO scanner New 1H candle detected for USD_CNH
+2026-08-26 18:35:30,205 INFO scanner Checking XAU_NZD
+2026-08-26 18:35:30,921 INFO scanner New 1H candle detected for XAU_NZD
+2026-08-26 18:35:30,921 INFO scanner Checking AUD_JPY
+2026-08-26 18:35:31,416 INFO scanner New 1H candle detected for AUD_JPY
+2026-08-26 18:35:31,416 INFO scanner Checking USD_HUF
+2026-08-26 18:35:31,721 INFO scanner New 1H candle detected for USD_HUF
+2026-08-26 18:35:32,418 INFO scanner Checking XCU_USD
+2026-08-26 18:35:32,700 INFO scanner New 1H candle detected for XCU_USD
+2026-08-26 18:35:32,700 INFO scanner Checking XAG_GBP
+2026-08-26 18:35:32,965 INFO scanner New 1H candle detected for XAG_GBP
+2026-08-26 18:35:32,965 INFO scanner Checking CN50_USD
+2026-08-26 18:35:33,240 INFO scanner New 1H candle detected for CN50_USD
+2026-08-26 18:35:33,874 INFO scanner Checking USD_CZK
+2026-08-26 18:35:34,154 INFO scanner New 1H candle detected for USD_CZK
+2026-08-26 18:35:34,154 INFO scanner Checking EUR_GBP
+2026-08-26 18:35:34,689 INFO scanner New 1H candle detected for EUR_GBP
+2026-08-26 18:35:34,689 INFO scanner Checking US30_USD
+2026-08-26 18:35:35,238 INFO scanner New 1H candle detected for US30_USD
+2026-08-26 18:35:35,238 INFO scanner Checking NZD_HKD
+2026-08-26 18:35:35,918 INFO scanner New 1H candle detected for NZD_HKD
+2026-08-26 18:35:35,919 INFO scanner Checking GBP_SGD
+2026-08-26 18:35:36,220 INFO scanner New 1H candle detected for GBP_SGD
+2026-08-26 18:35:36,220 INFO scanner Checking USD_SEK
+2026-08-26 18:35:36,478 INFO scanner New 1H candle detected for USD_SEK
+2026-08-26 18:35:36,478 INFO scanner Checking EUR_CAD
+2026-08-26 18:35:36,757 INFO scanner New 1H candle detected for EUR_CAD
+2026-08-26 18:35:37,318 INFO scanner Checking XAU_USD
+2026-08-26 18:35:37,618 INFO scanner New 1H candle detected for XAU_USD
+2026-08-26 18:35:37,618 INFO scanner Checking JP225Y_JPY
+2026-08-26 18:35:37,843 INFO scanner New 1H candle detected for JP225Y_JPY
+2026-08-26 18:35:38,665 INFO scanner Checking EUR_AUD
+2026-08-26 18:35:38,941 INFO scanner New 1H candle detected for EUR_AUD
+2026-08-26 18:35:38,942 INFO scanner Checking USD_CAD
+2026-08-26 18:35:39,227 INFO scanner New 1H candle detected for USD_CAD
+2026-08-26 18:35:39,228 INFO scanner Checking EUR_NOK
+2026-08-26 18:35:39,523 INFO scanner New 1H candle detected for EUR_NOK
+2026-08-26 18:35:39,523 INFO scanner Checking EUR_ZAR
+2026-08-26 18:35:39,913 INFO scanner New 1H candle detected for EUR_ZAR
+2026-08-26 18:35:39,914 INFO scanner Checking AUD_NZD
+2026-08-26 18:35:40,150 INFO scanner New 1H candle detected for AUD_NZD
+2026-08-26 18:35:40,150 INFO scanner Checking EUR_CHF
+2026-08-26 18:35:40,412 INFO scanner New 1H candle detected for EUR_CHF
+2026-08-26 18:35:40,919 INFO scanner Checking CAD_CHF
+2026-08-26 18:35:41,375 INFO scanner New 1H candle detected for CAD_CHF
+2026-08-26 18:35:41,964 INFO scanner Checking USB30Y_USD
+2026-08-26 18:35:42,377 INFO scanner New 1H candle detected for USB30Y_USD
+2026-08-26 18:35:42,377 INFO scanner Checking US2000_USD
+2026-08-26 18:35:43,010 INFO scanner New 1H candle detected for US2000_USD
+2026-08-26 18:35:43,010 INFO scanner Checking AU200_AUD
+2026-08-26 18:35:43,287 INFO scanner New 1H candle detected for AU200_AUD
+2026-08-26 18:35:43,287 INFO scanner Checking CHF_ZAR
+2026-08-26 18:35:43,617 INFO scanner New 1H candle detected for CHF_ZAR
+2026-08-26 18:35:43,618 INFO scanner Checking NATGAS_USD
+2026-08-26 18:35:43,927 INFO scanner New 1H candle detected for NATGAS_USD
+2026-08-26 18:35:44,695 INFO scanner Checking SPX500_USD
+2026-08-26 18:35:45,026 INFO scanner New 1H candle detected for SPX500_USD
+2026-08-26 18:35:45,777 INFO scanner BUY signal created for SPX500_USD
+2026-08-26 18:35:46,479 INFO scanner Telegram alert sent for SPX500_USD
+2026-08-26 18:35:46,480 INFO scanner Checking USD_DKK
+2026-08-26 18:35:46,776 INFO scanner New 1H candle detected for USD_DKK
+2026-08-26 18:35:47,329 INFO scanner Checking BCO_USD
+2026-08-26 18:35:47,690 INFO scanner New 1H candle detected for BCO_USD
+2026-08-26 18:35:47,690 INFO scanner Checking FR40_EUR
+2026-08-26 18:35:48,356 INFO scanner New 1H candle detected for FR40_EUR
+2026-08-26 18:35:48,356 INFO scanner Checking XPD_USD
+2026-08-26 18:35:48,722 INFO scanner New 1H candle detected for XPD_USD
+2026-08-26 18:35:48,722 INFO scanner Checking XAU_SGD
+2026-08-26 18:35:49,040 INFO scanner New 1H candle detected for XAU_SGD
+2026-08-26 18:35:50,483 INFO scanner Checking CAD_JPY
+2026-08-26 18:35:50,809 INFO scanner New 1H candle detected for CAD_JPY
+2026-08-26 18:35:50,809 INFO scanner Checking USD_ZAR
+2026-08-26 18:35:51,071 INFO scanner New 1H candle detected for USD_ZAR
+2026-08-26 18:35:51,071 INFO scanner Checking HKD_JPY
+2026-08-26 18:35:51,606 INFO scanner New 1H candle detected for HKD_JPY
+2026-08-26 18:35:51,606 INFO scanner Checking HK33_HKD
+2026-08-26 18:35:51,870 INFO scanner New 1H candle detected for HK33_HKD
+2026-08-26 18:35:51,870 INFO scanner Checking CAD_SGD
+2026-08-26 18:35:52,149 INFO scanner New 1H candle detected for CAD_SGD
+2026-08-26 18:35:52,149 INFO scanner Checking XAG_EUR
+2026-08-26 18:35:52,413 INFO scanner New 1H candle detected for XAG_EUR
+2026-08-26 18:35:52,413 INFO scanner Checking XAU_XAG
+2026-08-26 18:35:52,775 INFO scanner New 1H candle detected for XAU_XAG
+2026-08-26 18:35:52,775 INFO scanner Checking USB10Y_USD
+2026-08-26 18:35:53,086 INFO scanner New 1H candle detected for USB10Y_USD
+2026-08-26 18:35:53,087 INFO scanner Checking EU50_EUR
+2026-08-26 18:35:53,387 INFO scanner New 1H candle detected for EU50_EUR
+2026-08-26 18:35:53,387 INFO scanner Checking XAU_GBP
+2026-08-26 18:35:53,684 INFO scanner New 1H candle detected for XAU_GBP
+2026-08-26 18:35:54,281 INFO scanner Checking DE30_EUR
+2026-08-26 18:35:54,775 INFO scanner New 1H candle detected for DE30_EUR
+2026-08-26 18:35:54,775 INFO scanner Checking XAU_AUD
+2026-08-26 18:35:55,190 INFO scanner New 1H candle detected for XAU_AUD
+2026-08-26 18:35:55,190 INFO scanner Checking NAS100_USD
+2026-08-26 18:35:55,448 INFO scanner New 1H candle detected for NAS100_USD
+2026-08-26 18:35:56,235 INFO scanner BUY signal created for NAS100_USD
+2026-08-26 18:35:56,868 INFO scanner Telegram alert sent for NAS100_USD
+2026-08-26 18:35:56,869 INFO scanner Checking EUR_HUF
+2026-08-26 18:35:57,160 INFO scanner New 1H candle detected for EUR_HUF
+2026-08-26 18:35:57,757 INFO scanner Checking EUR_SEK
+2026-08-26 18:35:58,080 INFO scanner New 1H candle detected for EUR_SEK
+2026-08-26 18:35:58,080 INFO scanner Checking USD_SGD
+2026-08-26 18:35:58,322 INFO scanner New 1H candle detected for USD_SGD
+2026-08-26 18:35:58,322 INFO scanner Checking XAU_CAD
+2026-08-26 18:35:58,587 INFO scanner New 1H candle detected for XAU_CAD
+2026-08-26 18:35:59,023 INFO scanner Checking XPT_USD
+2026-08-26 18:35:59,373 INFO scanner New 1H candle detected for XPT_USD
+2026-08-26 18:35:59,374 INFO scanner Checking XAU_EUR
+2026-08-26 18:35:59,882 INFO scanner New 1H candle detected for XAU_EUR
+2026-08-26 18:36:00,341 INFO scanner Checking CORN_USD
+2026-08-26 18:36:00,643 INFO scanner New 1H candle detected for CORN_USD
+2026-08-26 18:36:00,644 INFO scanner Checking EUR_DKK
+2026-08-26 18:36:00,902 INFO scanner New 1H candle detected for EUR_DKK
+2026-08-26 18:36:00,902 INFO scanner Checking SOYBN_USD
+2026-08-26 18:36:01,313 INFO scanner New 1H candle detected for SOYBN_USD
+2026-08-26 18:36:01,313 INFO scanner Checking XAG_SGD
+2026-08-26 18:36:01,555 INFO scanner New 1H candle detected for XAG_SGD
+2026-08-26 18:36:01,556 INFO scanner Checking CHINAH_HKD
+2026-08-26 18:36:01,972 INFO scanner New 1H candle detected for CHINAH_HKD
+2026-08-26 18:36:01,972 INFO scanner Checking NL25_EUR
+2026-08-26 18:36:02,384 INFO scanner New 1H candle detected for NL25_EUR
+2026-08-26 18:36:02,384 INFO scanner Checking SGD_CHF
+2026-08-26 18:36:02,706 INFO scanner New 1H candle detected for SGD_CHF
+2026-08-26 18:36:02,706 INFO scanner Checking EUR_CZK
+2026-08-26 18:36:03,571 INFO scanner New 1H candle detected for EUR_CZK
+2026-08-26 18:36:03,571 INFO scanner Checking DE10YB_EUR
+2026-08-26 18:36:03,854 INFO scanner New 1H candle detected for DE10YB_EUR
+2026-08-26 18:36:03,854 INFO scanner Checking NZD_CAD
+2026-08-26 18:36:04,160 INFO scanner New 1H candle detected for NZD_CAD
+2026-08-26 18:36:04,161 INFO scanner Checking JP225_USD
+2026-08-26 18:36:04,383 INFO scanner New 1H candle detected for JP225_USD
+2026-08-26 18:36:04,383 INFO scanner Checking XAG_CAD
+2026-08-26 18:36:04,683 INFO scanner New 1H candle detected for XAG_CAD
+2026-08-26 18:36:04,683 INFO scanner Checking XAG_USD
+2026-08-26 18:36:04,962 INFO scanner New 1H candle detected for XAG_USD
+2026-08-26 18:36:04,963 INFO scanner Checking EUR_USD
+2026-08-26 18:36:05,187 INFO scanner New 1H candle detected for EUR_USD
+2026-08-26 18:36:05,940 INFO scanner Checking SG30_SGD
+2026-08-26 18:36:06,182 INFO scanner New 1H candle detected for SG30_SGD
+2026-08-26 18:36:06,781 INFO scanner Checking GBP_JPY
+2026-08-26 18:36:07,231 INFO scanner New 1H candle detected for GBP_JPY
+2026-08-26 18:36:07,231 INFO scanner Checking USD_TRY
+2026-08-26 18:36:07,818 INFO scanner New 1H candle detected for USD_TRY
+2026-08-26 18:36:07,818 INFO scanner Checking WHEAT_USD
+2026-08-26 18:36:08,146 INFO scanner New 1H candle detected for WHEAT_USD
+2026-08-26 18:51:09,458 INFO scanner Checking TRY_JPY
+2026-08-26 18:51:10,281 INFO scanner Checking CHF_JPY
+2026-08-26 18:51:10,624 INFO scanner Checking NZD_SGD
+2026-08-26 18:51:11,356 INFO scanner Checking GBP_NZD
+2026-08-26 18:51:11,601 INFO scanner Checking XAU_CHF
+2026-08-26 18:51:11,901 INFO scanner Checking USD_MXN
+2026-08-26 18:51:12,142 INFO scanner Checking GBP_USD
+2026-08-26 18:51:12,453 INFO scanner Checking USB05Y_USD
+2026-08-26 18:51:12,776 INFO scanner Checking UK10YB_GBP
+2026-08-26 18:51:13,062 INFO scanner Checking AUD_CAD
+2026-08-26 18:51:13,305 INFO scanner Checking EUR_PLN
+2026-08-26 18:51:13,574 INFO scanner Checking SUGAR_USD
+2026-08-26 18:51:13,911 INFO scanner Checking GBP_PLN
+2026-08-26 18:51:14,122 INFO scanner Checking USB02Y_USD
+2026-08-26 18:51:14,451 INFO scanner Checking ZAR_JPY
+2026-08-26 18:51:14,726 INFO scanner Checking AUD_USD
+2026-08-26 18:51:15,135 INFO scanner Checking NZD_JPY
+2026-08-26 18:51:15,427 INFO scanner Checking GBP_CAD
+2026-08-26 18:51:16,213 INFO scanner Checking UK100_GBP
+2026-08-26 18:51:16,613 INFO scanner Checking XAG_JPY
+2026-08-26 18:51:16,912 INFO scanner Checking GBP_ZAR
+2026-08-26 18:51:17,173 INFO scanner Checking SGD_JPY
+2026-08-26 18:51:17,516 INFO scanner Checking USD_JPY
+2026-08-26 18:51:17,810 INFO scanner Checking EUR_TRY
+2026-08-26 18:51:18,250 INFO scanner Checking USD_NOK
+2026-08-26 18:51:18,580 INFO scanner Checking EUR_JPY
+2026-08-26 18:51:18,878 INFO scanner Checking AUD_SGD
+2026-08-26 18:51:19,274 INFO scanner Checking XAG_NZD
+2026-08-26 18:51:19,525 INFO scanner Checking WTICO_USD
+2026-08-26 18:51:19,798 INFO scanner Checking XAG_AUD
+2026-08-26 18:51:20,074 INFO scanner Checking EUR_NZD
+2026-08-26 18:51:20,365 INFO scanner Checking GBP_HKD
+2026-08-26 18:51:20,611 INFO scanner Checking EUR_HKD
+2026-08-26 18:51:20,989 INFO scanner Checking XAU_HKD
+2026-08-26 18:51:21,283 INFO scanner Checking XAU_JPY
+2026-08-26 18:51:21,550 INFO scanner Checking USD_THB
+2026-08-26 18:51:21,825 INFO scanner Checking GBP_CHF
+2026-08-26 18:51:22,097 INFO scanner Checking AUD_CHF
+2026-08-26 18:51:22,317 INFO scanner Checking NZD_CHF
+2026-08-26 18:51:22,776 INFO scanner Checking ESPIX_EUR
+2026-08-26 18:51:23,197 INFO scanner Checking AUD_HKD
+2026-08-26 18:51:23,594 INFO scanner Checking XAG_HKD
+2026-08-26 18:51:23,816 INFO scanner Checking USD_CHF
+2026-08-26 18:51:24,204 INFO scanner Checking XAG_CHF
+2026-08-26 18:51:24,547 INFO scanner Checking CAD_HKD
+2026-08-26 18:51:24,866 INFO scanner Checking CH20_CHF
+2026-08-26 18:51:25,126 INFO scanner Checking USD_HKD
+2026-08-26 18:51:25,393 INFO scanner Checking CHF_HKD
+2026-08-26 18:51:25,688 INFO scanner Checking NZD_USD
+2026-08-26 18:51:26,015 INFO scanner Checking EUR_SGD
+2026-08-26 18:51:26,305 INFO scanner Checking GBP_AUD
+2026-08-26 18:51:26,578 INFO scanner Checking USD_PLN
+2026-08-26 18:51:26,793 INFO scanner Checking USD_CNH
+2026-08-26 18:51:27,178 INFO scanner Checking XAU_NZD
+2026-08-26 18:51:27,382 INFO scanner Checking AUD_JPY
+2026-08-26 18:51:27,639 INFO scanner Checking USD_HUF
+2026-08-26 18:51:27,923 INFO scanner Checking XCU_USD
+2026-08-26 18:51:28,231 INFO scanner Checking XAG_GBP
+2026-08-26 18:51:28,609 INFO scanner Checking CN50_USD
+2026-08-26 18:51:28,876 INFO scanner Checking USD_CZK
+2026-08-26 18:51:29,119 INFO scanner Checking EUR_GBP
+2026-08-26 18:51:29,477 INFO scanner Checking US30_USD
+2026-08-26 18:51:29,745 INFO scanner Checking NZD_HKD
+2026-08-26 18:51:30,133 INFO scanner Checking GBP_SGD
+2026-08-26 18:51:30,388 INFO scanner Checking USD_SEK
+2026-08-26 18:51:30,697 INFO scanner Checking EUR_CAD
+2026-08-26 18:51:31,207 INFO scanner Checking XAU_USD
+2026-08-26 18:51:31,457 INFO scanner Checking JP225Y_JPY
+2026-08-26 18:51:31,716 INFO scanner Checking EUR_AUD
+2026-08-26 18:51:31,998 INFO scanner Checking USD_CAD
+2026-08-26 18:51:32,349 INFO scanner Checking EUR_NOK
+2026-08-26 18:51:32,745 INFO scanner Checking EUR_ZAR
+2026-08-26 18:51:33,105 INFO scanner Checking AUD_NZD
+2026-08-26 18:51:33,379 INFO scanner Checking EUR_CHF
+2026-08-26 18:51:33,706 INFO scanner Checking CAD_CHF
+2026-08-26 18:51:34,491 INFO scanner Checking USB30Y_USD
+2026-08-26 18:51:34,915 INFO scanner Checking US2000_USD
+2026-08-26 18:51:35,203 INFO scanner Checking AU200_AUD
+2026-08-26 18:51:35,701 INFO scanner Checking CHF_ZAR
+2026-08-26 18:51:35,980 INFO scanner Checking NATGAS_USD
+2026-08-26 18:51:36,199 INFO scanner Checking SPX500_USD
+2026-08-26 18:51:36,745 INFO scanner Checking USD_DKK
+2026-08-26 18:51:37,110 INFO scanner Checking BCO_USD
+2026-08-26 18:51:37,339 INFO scanner Checking FR40_EUR
+2026-08-26 18:51:37,652 INFO scanner Checking XPD_USD
+2026-08-26 18:51:37,953 INFO scanner Checking XAU_SGD
+2026-08-26 18:51:38,209 INFO scanner Checking CAD_JPY
+2026-08-26 18:51:38,533 INFO scanner Checking USD_ZAR
+2026-08-26 18:51:38,748 INFO scanner Checking HKD_JPY
+2026-08-26 18:51:39,072 INFO scanner Checking HK33_HKD
+2026-08-26 18:51:39,378 INFO scanner Checking CAD_SGD
+2026-08-26 18:51:39,669 INFO scanner Checking XAG_EUR
+2026-08-26 18:51:39,945 INFO scanner Checking XAU_XAG
+2026-08-26 18:51:40,195 INFO scanner Checking USB10Y_USD
+2026-08-26 18:51:40,494 INFO scanner Checking EU50_EUR
+2026-08-26 18:51:40,792 INFO scanner Checking XAU_GBP
+2026-08-26 18:51:41,034 INFO scanner Checking DE30_EUR
+2026-08-26 18:51:41,330 INFO scanner Checking XAU_AUD
+2026-08-26 18:51:41,663 INFO scanner Checking NAS100_USD
+2026-08-26 18:51:41,883 INFO scanner Checking EUR_HUF
+2026-08-26 18:51:42,175 INFO scanner Checking EUR_SEK
+2026-08-26 18:51:42,512 INFO scanner Checking USD_SGD
+2026-08-26 18:51:42,782 INFO scanner Checking XAU_CAD
+2026-08-26 18:51:43,163 INFO scanner Checking XPT_USD
+2026-08-26 18:51:43,469 INFO scanner Checking XAU_EUR
+2026-08-26 18:51:43,739 INFO scanner Checking CORN_USD
+2026-08-26 18:51:44,037 INFO scanner Checking EUR_DKK
+2026-08-26 18:51:44,314 INFO scanner Checking SOYBN_USD
+2026-08-26 18:51:44,559 INFO scanner Checking XAG_SGD
+2026-08-26 18:51:44,872 INFO scanner Checking CHINAH_HKD
+2026-08-26 18:51:45,154 INFO scanner Checking NL25_EUR
+2026-08-26 18:51:45,414 INFO scanner Checking SGD_CHF
+2026-08-26 18:51:45,701 INFO scanner Checking EUR_CZK
+2026-08-26 18:51:46,072 INFO scanner Checking DE10YB_EUR
+2026-08-26 18:51:46,663 INFO scanner Checking NZD_CAD
+2026-08-26 18:51:46,934 INFO scanner Checking JP225_USD
+2026-08-26 18:51:47,212 INFO scanner Checking XAG_CAD
+2026-08-26 18:51:47,443 INFO scanner Checking XAG_USD
+2026-08-26 18:51:47,792 INFO scanner Checking EUR_USD
+2026-08-26 18:51:48,288 INFO scanner Checking SG30_SGD
+2026-08-26 18:51:48,574 INFO scanner Checking GBP_JPY
+2026-08-26 18:51:48,843 INFO scanner Checking USD_TRY
+2026-08-26 18:51:49,103 INFO scanner Checking WHEAT_USD
+2026-08-26 18:57:14,532 INFO scanner Shutdown signal received: 2
+2026-08-26 18:57:14,532 INFO scanner Scanner stopped
+2026-08-26 18:57:17,230 INFO scanner Telegram stop notification sent
+2026-08-26 19:59:00,455 ERROR scanner Configuration error: OANDA_API_KEY and OANDA_ACCOUNT_ID are required
+2026-08-26 19:59:29,861 ERROR scanner Configuration error: OANDA_API_KEY and OANDA_ACCOUNT_ID are required
+2026-08-27 09:32:15,931 ERROR scanner Configuration error: OANDA_API_KEY and OANDA_ACCOUNT_ID are required
+2026-08-27 09:33:13,323 ERROR scanner Configuration error: OANDA_API_KEY and OANDA_ACCOUNT_ID are required
+2026-08-27 09:34:56,125 ERROR scanner Configuration error: OANDA_API_KEY and OANDA_ACCOUNT_ID are required
+2026-08-27 09:35:44,606 ERROR scanner Configuration error: OANDA_API_KEY and OANDA_ACCOUNT_ID are required
+2026-08-27 16:02:27,329 INFO scanner Capital.com provider enabled
+2026-08-27 16:02:27,331 INFO scanner Connecting to Capital.com
+2026-08-27 16:02:28,485 INFO scanner Capital.com authentication successful
+2026-08-27 16:02:28,486 INFO scanner Capital.com connected
+2026-08-27 16:02:29,075 WARNING scanner Capital.com instrument count unavailable: Capital.com HTTP 400 for /markets
+2026-08-27 16:02:30,257 INFO scanner Loaded 124 symbols: TRY_JPY (OANDA), CHF_JPY (OANDA), NZD_SGD (OANDA), GBP_NZD (OANDA), XAU_CHF (OANDA), USD_MXN (OANDA), GBP_USD (OANDA), USB05Y_USD (OANDA), UK10YB_GBP (OANDA), AUD_CAD (OANDA), EUR_PLN (OANDA), SUGAR_USD (OANDA), GBP_PLN (OANDA), USB02Y_USD (OANDA), ZAR_JPY (OANDA), AUD_USD (OANDA), NZD_JPY (OANDA), GBP_CAD (OANDA), UK100_GBP (OANDA), XAG_JPY (OANDA), GBP_ZAR (OANDA), SGD_JPY (OANDA), USD_JPY (OANDA), EUR_TRY (OANDA), USD_NOK (OANDA), EUR_JPY (OANDA), AUD_SGD (OANDA), XAG_NZD (OANDA), WTICO_USD (OANDA), XAG_AUD (OANDA), EUR_NZD (OANDA), GBP_HKD (OANDA), EUR_HKD (OANDA), XAU_HKD (OANDA), XAU_JPY (OANDA), USD_THB (OANDA), GBP_CHF (OANDA), AUD_CHF (OANDA), NZD_CHF (OANDA), ESPIX_EUR (OANDA), AUD_HKD (OANDA), XAG_HKD (OANDA), USD_CHF (OANDA), XAG_CHF (OANDA), CAD_HKD (OANDA), CH20_CHF (OANDA), USD_HKD (OANDA), CHF_HKD (OANDA), NZD_USD (OANDA), EUR_SGD (OANDA), GBP_AUD (OANDA), USD_PLN (OANDA), USD_CNH (OANDA), XAU_NZD (OANDA), AUD_JPY (OANDA), USD_HUF (OANDA), XCU_USD (OANDA), XAG_GBP (OANDA), CN50_USD (OANDA), USD_CZK (OANDA), EUR_GBP (OANDA), US30_USD (OANDA), NZD_HKD (OANDA), GBP_SGD (OANDA), USD_SEK (OANDA), EUR_CAD (OANDA), XAU_USD (OANDA), JP225Y_JPY (OANDA), EUR_AUD (OANDA), USD_CAD (OANDA), EUR_NOK (OANDA), EUR_ZAR (OANDA), AUD_NZD (OANDA), EUR_CHF (OANDA), CAD_CHF (OANDA), USB30Y_USD (OANDA), US2000_USD (OANDA), AU200_AUD (OANDA), CHF_ZAR (OANDA), NATGAS_USD (OANDA), SPX500_USD (OANDA), USD_DKK (OANDA), BCO_USD (OANDA), FR40_EUR (OANDA), XPD_USD (OANDA), XAU_SGD (OANDA), CAD_JPY (OANDA), USD_ZAR (OANDA), HKD_JPY (OANDA), HK33_HKD (OANDA), CAD_SGD (OANDA), XAG_EUR (OANDA), XAU_XAG (OANDA), USB10Y_USD (OANDA), EU50_EUR (OANDA), XAU_GBP (OANDA), DE30_EUR (OANDA), XAU_AUD (OANDA), NAS100_USD (OANDA), EUR_HUF (OANDA), EUR_SEK (OANDA), USD_SGD (OANDA), XAU_CAD (OANDA), XPT_USD (OANDA), XAU_EUR (OANDA), CORN_USD (OANDA), EUR_DKK (OANDA), SOYBN_USD (OANDA), XAG_SGD (OANDA), CHINAH_HKD (OANDA), NL25_EUR (OANDA), SGD_CHF (OANDA), EUR_CZK (OANDA), DE10YB_EUR (OANDA), NZD_CAD (OANDA), JP225_USD (OANDA), XAG_CAD (OANDA), XAG_USD (OANDA), EUR_USD (OANDA), SG30_SGD (OANDA), GBP_JPY (OANDA), USD_TRY (OANDA), WHEAT_USD (OANDA), US100 (CAPITAL)
+2026-08-27 16:02:30,257 INFO scanner Searching Capital.com instruments for: US100
+2026-08-27 16:02:30,839 INFO scanner Matching instruments:
+2026-08-27 16:02:30,840 INFO scanner US100 / US Tech 100
+2026-08-27 16:02:30,840 INFO scanner UK100 / UK 100
+2026-08-27 16:02:30,840 INFO scanner US500 / US 500
+2026-08-27 16:02:30,841 INFO scanner US30 / US Wall Street 30
+2026-08-27 16:03:28,993 INFO scanner Capital.com provider enabled
+2026-08-27 16:03:28,994 INFO scanner Connecting to Capital.com
+2026-08-27 16:03:29,855 INFO scanner Capital.com authentication successful
+2026-08-27 16:03:29,855 INFO scanner Capital.com connected
+2026-08-27 16:03:30,415 WARNING scanner Capital.com instrument count unavailable: Capital.com HTTP 400 for /markets
+2026-08-27 16:03:30,793 INFO scanner Loaded 124 symbols: TRY_JPY (OANDA), CHF_JPY (OANDA), NZD_SGD (OANDA), GBP_NZD (OANDA), XAU_CHF (OANDA), USD_MXN (OANDA), GBP_USD (OANDA), USB05Y_USD (OANDA), UK10YB_GBP (OANDA), AUD_CAD (OANDA), EUR_PLN (OANDA), SUGAR_USD (OANDA), GBP_PLN (OANDA), USB02Y_USD (OANDA), ZAR_JPY (OANDA), AUD_USD (OANDA), NZD_JPY (OANDA), GBP_CAD (OANDA), UK100_GBP (OANDA), XAG_JPY (OANDA), GBP_ZAR (OANDA), SGD_JPY (OANDA), USD_JPY (OANDA), EUR_TRY (OANDA), USD_NOK (OANDA), EUR_JPY (OANDA), AUD_SGD (OANDA), XAG_NZD (OANDA), WTICO_USD (OANDA), XAG_AUD (OANDA), EUR_NZD (OANDA), GBP_HKD (OANDA), EUR_HKD (OANDA), XAU_HKD (OANDA), XAU_JPY (OANDA), USD_THB (OANDA), GBP_CHF (OANDA), AUD_CHF (OANDA), NZD_CHF (OANDA), ESPIX_EUR (OANDA), AUD_HKD (OANDA), XAG_HKD (OANDA), USD_CHF (OANDA), XAG_CHF (OANDA), CAD_HKD (OANDA), CH20_CHF (OANDA), USD_HKD (OANDA), CHF_HKD (OANDA), NZD_USD (OANDA), EUR_SGD (OANDA), GBP_AUD (OANDA), USD_PLN (OANDA), USD_CNH (OANDA), XAU_NZD (OANDA), AUD_JPY (OANDA), USD_HUF (OANDA), XCU_USD (OANDA), XAG_GBP (OANDA), CN50_USD (OANDA), USD_CZK (OANDA), EUR_GBP (OANDA), US30_USD (OANDA), NZD_HKD (OANDA), GBP_SGD (OANDA), USD_SEK (OANDA), EUR_CAD (OANDA), XAU_USD (OANDA), JP225Y_JPY (OANDA), EUR_AUD (OANDA), USD_CAD (OANDA), EUR_NOK (OANDA), EUR_ZAR (OANDA), AUD_NZD (OANDA), EUR_CHF (OANDA), CAD_CHF (OANDA), USB30Y_USD (OANDA), US2000_USD (OANDA), AU200_AUD (OANDA), CHF_ZAR (OANDA), NATGAS_USD (OANDA), SPX500_USD (OANDA), USD_DKK (OANDA), BCO_USD (OANDA), FR40_EUR (OANDA), XPD_USD (OANDA), XAU_SGD (OANDA), CAD_JPY (OANDA), USD_ZAR (OANDA), HKD_JPY (OANDA), HK33_HKD (OANDA), CAD_SGD (OANDA), XAG_EUR (OANDA), XAU_XAG (OANDA), USB10Y_USD (OANDA), EU50_EUR (OANDA), XAU_GBP (OANDA), DE30_EUR (OANDA), XAU_AUD (OANDA), NAS100_USD (OANDA), EUR_HUF (OANDA), EUR_SEK (OANDA), USD_SGD (OANDA), XAU_CAD (OANDA), XPT_USD (OANDA), XAU_EUR (OANDA), CORN_USD (OANDA), EUR_DKK (OANDA), SOYBN_USD (OANDA), XAG_SGD (OANDA), CHINAH_HKD (OANDA), NL25_EUR (OANDA), SGD_CHF (OANDA), EUR_CZK (OANDA), DE10YB_EUR (OANDA), NZD_CAD (OANDA), JP225_USD (OANDA), XAG_CAD (OANDA), XAG_USD (OANDA), EUR_USD (OANDA), SG30_SGD (OANDA), GBP_JPY (OANDA), USD_TRY (OANDA), WHEAT_USD (OANDA), US100 (CAPITAL)
+2026-08-27 16:03:40,842 WARNING scanner Telegram request failed; retrying sendMessage: <urlopen error timed out>
+2026-08-27 16:03:51,503 WARNING scanner Telegram request failed; retrying sendMessage: <urlopen error _ssl.c:983: The handshake operation timed out>
+2026-08-27 16:04:02,508 ERROR scanner Telegram startup notification failed
+Traceback (most recent call last):
+  File "C:\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Python312\Lib\http\client.py", line 1470, in connect
+    super().connect()
+  File "C:\Python312\Lib\http\client.py", line 1001, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 853, in create_connection
+    raise exceptions[0]
+  File "C:\Python312\Lib\socket.py", line 838, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 96, in _api_request
+    with urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\main.py", line 183, in main
+    notifier.send_message(startup_message(scanner, symbols), parse_mode="Markdown")
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 54, in send_message
+    result = self._api_request("sendMessage", payload, timeout=self.timeout_seconds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 114, in _api_request
+    raise TelegramError(f"Telegram {method_name} failed: {exc}") from exc
+app.notifications.telegram.TelegramError: Telegram sendMessage failed: <urlopen error timed out>
+2026-08-27 16:04:12,997 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error _ssl.c:983: The handshake operation timed out>
+2026-08-27 16:04:23,523 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error timed out>
+2026-08-27 16:04:34,527 ERROR scanner Could not clear old Telegram updates; continuing
+Traceback (most recent call last):
+  File "C:\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Python312\Lib\http\client.py", line 1470, in connect
+    super().connect()
+  File "C:\Python312\Lib\http\client.py", line 1001, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 853, in create_connection
+    raise exceptions[0]
+  File "C:\Python312\Lib\socket.py", line 838, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 96, in _api_request
+    with urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram_commands.py", line 43, in _prime_update_offset
+    updates = self.notifier.get_updates(offset=-1, timeout=0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 69, in get_updates
+    result = self._api_request("getUpdates", query, timeout=max(self.timeout_seconds, timeout + 5), method="GET")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 114, in _api_request
+    raise TelegramError(f"Telegram {method_name} failed: {exc}") from exc
+app.notifications.telegram.TelegramError: Telegram getUpdates failed: <urlopen error timed out>
+2026-08-27 16:04:34,541 INFO scanner Telegram command polling started
+2026-08-27 16:04:34,542 INFO scanner Scanner started
+2026-08-27 16:04:44,722 WARNING scanner Telegram request failed; retrying sendMessage: <urlopen error _ssl.c:983: The handshake operation timed out>
+2026-08-27 16:04:55,393 WARNING scanner Telegram request failed; retrying sendMessage: <urlopen error _ssl.c:983: The handshake operation timed out>
+2026-08-27 16:04:55,599 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2026-08-27 16:05:06,561 ERROR scanner Telegram scan status notification failed
+Traceback (most recent call last):
+  File "C:\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Python312\Lib\http\client.py", line 1477, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\ssl.py", line 1042, in _create
+    self.do_handshake()
+  File "C:\Python312\Lib\ssl.py", line 1320, in do_handshake
+    self._sslobj.do_handshake()
+TimeoutError: _ssl.c:983: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 96, in _api_request
+    with urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error _ssl.c:983: The handshake operation timed out>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\scanner\scanner.py", line 464, in _notify_status
+    self.status_notifier(message)
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\main.py", line 163, in <lambda>
+    scanner.status_notifier = lambda message: notifier.send_message(message, parse_mode="Markdown")
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 54, in send_message
+    result = self._api_request("sendMessage", payload, timeout=self.timeout_seconds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 114, in _api_request
+    raise TelegramError(f"Telegram {method_name} failed: {exc}") from exc
+app.notifications.telegram.TelegramError: Telegram sendMessage failed: <urlopen error _ssl.c:983: The handshake operation timed out>
+2026-08-27 16:05:06,631 INFO scanner Checking TRY_JPY via OANDA
+2026-08-27 16:05:08,274 INFO scanner Checking CHF_JPY via OANDA
+2026-08-27 16:05:09,395 INFO scanner Checking NZD_SGD via OANDA
+2026-08-27 16:05:09,830 INFO scanner Checking GBP_NZD via OANDA
+2026-08-27 16:05:10,192 INFO scanner Checking XAU_CHF via OANDA
+2026-08-27 16:05:10,657 INFO scanner Checking USD_MXN via OANDA
+2026-08-27 16:05:11,014 INFO scanner Checking GBP_USD via OANDA
+2026-08-27 16:05:11,368 INFO scanner Checking USB05Y_USD via OANDA
+2026-08-27 16:05:12,318 INFO scanner Checking UK10YB_GBP via OANDA
+2026-08-27 16:05:12,686 INFO scanner Checking AUD_CAD via OANDA
+2026-08-27 16:05:13,046 INFO scanner Checking EUR_PLN via OANDA
+2026-08-27 16:05:13,382 INFO scanner Checking SUGAR_USD via OANDA
+2026-08-27 16:05:13,860 INFO scanner Checking GBP_PLN via OANDA
+2026-08-27 16:05:14,232 INFO scanner Checking USB02Y_USD via OANDA
+2026-08-27 16:05:14,570 INFO scanner Checking ZAR_JPY via OANDA
+2026-08-27 16:05:14,932 INFO scanner Checking AUD_USD via OANDA
+2026-08-27 16:05:15,268 INFO scanner Checking NZD_JPY via OANDA
+2026-08-27 16:05:15,626 INFO scanner Checking GBP_CAD via OANDA
+2026-08-27 16:05:16,012 INFO scanner Checking UK100_GBP via OANDA
+2026-08-27 16:05:16,371 INFO scanner Checking XAG_JPY via OANDA
+2026-08-27 16:05:16,803 INFO scanner Checking GBP_ZAR via OANDA
+2026-08-27 16:05:17,188 INFO scanner Checking SGD_JPY via OANDA
+2026-08-27 16:05:17,189 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2026-08-27 16:05:17,520 INFO scanner Checking USD_JPY via OANDA
+2026-08-27 16:05:17,890 INFO scanner Checking EUR_TRY via OANDA
+2026-08-27 16:05:18,206 INFO scanner Checking USD_NOK via OANDA
+2026-08-27 16:05:18,526 INFO scanner Checking EUR_JPY via OANDA
+2026-08-27 16:05:18,845 INFO scanner Checking AUD_SGD via OANDA
+2026-08-27 16:05:19,362 INFO scanner Checking XAG_NZD via OANDA
+2026-08-27 16:05:19,786 INFO scanner Checking WTICO_USD via OANDA
+2026-08-27 16:05:20,127 INFO scanner Checking XAG_AUD via OANDA
+2026-08-27 16:05:20,464 INFO scanner Checking EUR_NZD via OANDA
+2026-08-27 16:05:21,544 INFO scanner Checking GBP_HKD via OANDA
+2026-08-27 16:05:22,012 INFO scanner Checking EUR_HKD via OANDA
+2026-08-27 16:05:23,276 INFO scanner Checking XAU_HKD via OANDA
+2026-08-27 16:05:23,598 INFO scanner Checking XAU_JPY via OANDA
+2026-08-27 16:05:23,922 INFO scanner Checking USD_THB via OANDA
+2026-08-27 16:05:24,289 INFO scanner Checking GBP_CHF via OANDA
+2026-08-27 16:05:24,628 INFO scanner Checking AUD_CHF via OANDA
+2026-08-27 16:05:24,986 INFO scanner Checking NZD_CHF via OANDA
+2026-08-27 16:05:25,372 INFO scanner Checking ESPIX_EUR via OANDA
+2026-08-27 16:05:25,837 INFO scanner Checking AUD_HKD via OANDA
+2026-08-27 16:05:26,273 INFO scanner Checking XAG_HKD via OANDA
+2026-08-27 16:05:26,612 INFO scanner Checking USD_CHF via OANDA
+2026-08-27 16:05:26,977 INFO scanner Checking XAG_CHF via OANDA
+2026-08-27 16:05:27,567 INFO scanner Checking CAD_HKD via OANDA
+2026-08-27 16:05:27,945 INFO scanner Checking CH20_CHF via OANDA
+2026-08-27 16:05:28,272 INFO scanner Checking USD_HKD via OANDA
+2026-08-27 16:05:29,269 INFO scanner Checking CHF_HKD via OANDA
+2026-08-27 16:05:29,685 INFO scanner Checking NZD_USD via OANDA
+2026-08-27 16:05:30,021 INFO scanner Checking EUR_SGD via OANDA
+2026-08-27 16:05:30,338 INFO scanner Checking GBP_AUD via OANDA
+2026-08-27 16:05:30,669 INFO scanner Checking USD_PLN via OANDA
+2026-08-27 16:05:31,013 INFO scanner Checking USD_CNH via OANDA
+2026-08-27 16:05:31,352 INFO scanner Checking XAU_NZD via OANDA
+2026-08-27 16:05:31,817 INFO scanner Checking AUD_JPY via OANDA
+2026-08-27 16:05:32,840 INFO scanner Checking USD_HUF via OANDA
+2026-08-27 16:05:33,386 INFO scanner Checking XCU_USD via OANDA
+2026-08-27 16:05:33,851 INFO scanner Checking XAG_GBP via OANDA
+2026-08-27 16:05:34,369 INFO scanner Checking CN50_USD via OANDA
+2026-08-27 16:05:34,839 INFO scanner Checking USD_CZK via OANDA
+2026-08-27 16:05:35,259 INFO scanner Checking EUR_GBP via OANDA
+2026-08-27 16:05:35,645 INFO scanner Checking US30_USD via OANDA
+2026-08-27 16:05:36,001 INFO scanner Checking NZD_HKD via OANDA
+2026-08-27 16:05:36,386 INFO scanner Checking GBP_SGD via OANDA
+2026-08-27 16:05:36,729 INFO scanner Checking USD_SEK via OANDA
+2026-08-27 16:05:37,065 INFO scanner Checking EUR_CAD via OANDA
+2026-08-27 16:05:37,410 INFO scanner Checking XAU_USD via OANDA
+2026-08-27 16:05:37,852 INFO scanner Checking JP225Y_JPY via OANDA
+2026-08-27 16:05:38,187 INFO scanner Checking EUR_AUD via OANDA
+2026-08-27 16:05:39,229 ERROR scanner Telegram command polling failed; retrying
+Traceback (most recent call last):
+  File "C:\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Python312\Lib\http\client.py", line 1470, in connect
+    super().connect()
+  File "C:\Python312\Lib\http\client.py", line 1001, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 853, in create_connection
+    raise exceptions[0]
+  File "C:\Python312\Lib\socket.py", line 838, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 96, in _api_request
+    with urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram_commands.py", line 54, in _run
+    updates = self.notifier.get_updates(offset=self._offset, timeout=25)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 69, in get_updates
+    result = self._api_request("getUpdates", query, timeout=max(self.timeout_seconds, timeout + 5), method="GET")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 114, in _api_request
+    raise TelegramError(f"Telegram {method_name} failed: {exc}") from exc
+app.notifications.telegram.TelegramError: Telegram getUpdates failed: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2026-08-27 16:05:39,703 INFO scanner SELL signal created for EUR_AUD via OANDA
+2026-08-27 16:05:49,731 WARNING scanner Telegram request failed; retrying sendMessage: <urlopen error timed out>
+2026-08-27 16:06:00,234 WARNING scanner Telegram request failed; retrying sendMessage: <urlopen error timed out>
+2026-08-27 16:06:03,343 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2026-08-27 16:06:11,245 ERROR scanner Telegram alert failed for EUR_AUD; signal remains saved
+Traceback (most recent call last):
+  File "C:\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Python312\Lib\http\client.py", line 1470, in connect
+    super().connect()
+  File "C:\Python312\Lib\http\client.py", line 1001, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 853, in create_connection
+    raise exceptions[0]
+  File "C:\Python312\Lib\socket.py", line 838, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 96, in _api_request
+    with urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\scanner\scanner.py", line 243, in scan_symbol
+    sent = self.notifier.send_signal(signal)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 41, in send_signal
+    return self.send_message(format_signal(signal), parse_mode="Markdown")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 54, in send_message
+    result = self._api_request("sendMessage", payload, timeout=self.timeout_seconds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 114, in _api_request
+    raise TelegramError(f"Telegram {method_name} failed: {exc}") from exc
+app.notifications.telegram.TelegramError: Telegram sendMessage failed: <urlopen error timed out>
+2026-08-27 16:06:11,260 INFO scanner Checking USD_CAD via OANDA
+2026-08-27 16:06:11,632 INFO scanner Checking EUR_NOK via OANDA
+2026-08-27 16:06:12,988 INFO scanner Checking EUR_ZAR via OANDA
+2026-08-27 16:06:14,012 INFO scanner Checking AUD_NZD via OANDA
+2026-08-27 16:06:16,247 INFO scanner Checking EUR_CHF via OANDA
+2026-08-27 16:06:16,800 INFO scanner Checking CAD_CHF via OANDA
+2026-08-27 16:06:17,841 INFO scanner Checking USB30Y_USD via OANDA
+2026-08-27 16:06:19,207 INFO scanner Checking US2000_USD via OANDA
+2026-08-27 16:06:19,611 INFO scanner Checking AU200_AUD via OANDA
+2026-08-27 16:06:20,107 INFO scanner Checking CHF_ZAR via OANDA
+2026-08-27 16:06:20,513 INFO scanner Checking NATGAS_USD via OANDA
+2026-08-27 16:06:21,618 INFO scanner Checking SPX500_USD via OANDA
+2026-08-27 16:06:21,937 INFO scanner Checking USD_DKK via OANDA
+2026-08-27 16:06:22,281 INFO scanner Checking BCO_USD via OANDA
+2026-08-27 16:06:22,782 INFO scanner Checking FR40_EUR via OANDA
+2026-08-27 16:06:23,176 INFO scanner Checking XPD_USD via OANDA
+2026-08-27 16:06:23,509 INFO scanner Checking XAU_SGD via OANDA
+2026-08-27 16:06:23,827 INFO scanner Checking CAD_JPY via OANDA
+2026-08-27 16:06:24,156 INFO scanner Checking USD_ZAR via OANDA
+2026-08-27 16:06:24,478 INFO scanner Checking HKD_JPY via OANDA
+2026-08-27 16:06:24,800 INFO scanner Checking HK33_HKD via OANDA
+2026-08-27 16:06:25,209 INFO scanner Checking CAD_SGD via OANDA
+2026-08-27 16:06:25,557 INFO scanner Checking XAG_EUR via OANDA
+2026-08-27 16:06:25,908 INFO scanner Checking XAU_XAG via OANDA
+2026-08-27 16:06:26,870 INFO scanner Checking USB10Y_USD via OANDA
+2026-08-27 16:06:27,324 INFO scanner Checking EU50_EUR via OANDA
+2026-08-27 16:06:27,657 INFO scanner Checking XAU_GBP via OANDA
+2026-08-27 16:06:28,004 INFO scanner Checking DE30_EUR via OANDA
+2026-08-27 16:06:28,331 INFO scanner Checking XAU_AUD via OANDA
+2026-08-27 16:06:28,660 INFO scanner Checking NAS100_USD via OANDA
+2026-08-27 16:06:28,986 INFO scanner Checking EUR_HUF via OANDA
+2026-08-27 16:06:29,359 INFO scanner Checking EUR_SEK via OANDA
+2026-08-27 16:06:29,760 INFO scanner Checking USD_SGD via OANDA
+2026-08-27 16:06:30,139 INFO scanner Checking XAU_CAD via OANDA
+2026-08-27 16:06:30,463 INFO scanner Checking XPT_USD via OANDA
+2026-08-27 16:06:30,774 INFO scanner Checking XAU_EUR via OANDA
+2026-08-27 16:06:31,090 INFO scanner Checking CORN_USD via OANDA
+2026-08-27 16:06:31,410 INFO scanner Checking EUR_DKK via OANDA
+2026-08-27 16:06:31,792 INFO scanner Checking SOYBN_USD via OANDA
+2026-08-27 16:06:32,116 INFO scanner Checking XAG_SGD via OANDA
+2026-08-27 16:06:32,424 INFO scanner Checking CHINAH_HKD via OANDA
+2026-08-27 16:06:32,776 INFO scanner Checking NL25_EUR via OANDA
+2026-08-27 16:06:33,118 INFO scanner Checking SGD_CHF via OANDA
+2026-08-27 16:06:33,471 INFO scanner Checking EUR_CZK via OANDA
+2026-08-27 16:06:34,021 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error _ssl.c:983: The handshake operation timed out>
+2026-08-27 16:06:34,623 INFO scanner Checking DE10YB_EUR via OANDA
+2026-08-27 16:06:34,980 INFO scanner Checking NZD_CAD via OANDA
+2026-08-27 16:06:35,292 INFO scanner Checking JP225_USD via OANDA
+2026-08-27 16:06:35,632 INFO scanner Checking XAG_CAD via OANDA
+2026-08-27 16:06:35,958 INFO scanner Checking XAG_USD via OANDA
+2026-08-27 16:06:36,346 INFO scanner Checking EUR_USD via OANDA
+2026-08-27 16:06:36,671 INFO scanner Checking SG30_SGD via OANDA
+2026-08-27 16:06:37,042 INFO scanner Checking GBP_JPY via OANDA
+2026-08-27 16:06:37,373 INFO scanner Checking USD_TRY via OANDA
+2026-08-27 16:06:37,834 INFO scanner Checking WHEAT_USD via OANDA
+2026-08-27 16:06:38,172 INFO scanner Checking US100 via CAPITAL
+2026-08-27 16:06:38,172 INFO scanner Fetching 1H candles for US100
+2026-08-27 16:06:39,191 INFO scanner Capital.com candle data normalized
+2026-08-27 16:06:49,196 WARNING scanner Telegram request failed; retrying sendMessage: <urlopen error timed out>
+2026-08-27 16:06:59,708 WARNING scanner Telegram request failed; retrying sendMessage: <urlopen error timed out>
+2026-08-27 16:07:05,194 ERROR scanner Telegram command polling failed; retrying
+Traceback (most recent call last):
+  File "C:\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Python312\Lib\http\client.py", line 1477, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\ssl.py", line 1042, in _create
+    self.do_handshake()
+  File "C:\Python312\Lib\ssl.py", line 1320, in do_handshake
+    self._sslobj.do_handshake()
+TimeoutError: _ssl.c:983: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 96, in _api_request
+    with urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error _ssl.c:983: The handshake operation timed out>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram_commands.py", line 54, in _run
+    updates = self.notifier.get_updates(offset=self._offset, timeout=25)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 69, in get_updates
+    result = self._api_request("getUpdates", query, timeout=max(self.timeout_seconds, timeout + 5), method="GET")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 114, in _api_request
+    raise TelegramError(f"Telegram {method_name} failed: {exc}") from exc
+app.notifications.telegram.TelegramError: Telegram getUpdates failed: <urlopen error _ssl.c:983: The handshake operation timed out>
+2026-08-27 16:07:10,722 ERROR scanner Telegram scan status notification failed
+Traceback (most recent call last):
+  File "C:\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Python312\Lib\http\client.py", line 1470, in connect
+    super().connect()
+  File "C:\Python312\Lib\http\client.py", line 1001, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 853, in create_connection
+    raise exceptions[0]
+  File "C:\Python312\Lib\socket.py", line 838, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 96, in _api_request
+    with urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\scanner\scanner.py", line 464, in _notify_status
+    self.status_notifier(message)
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\main.py", line 163, in <lambda>
+    scanner.status_notifier = lambda message: notifier.send_message(message, parse_mode="Markdown")
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 54, in send_message
+    result = self._api_request("sendMessage", payload, timeout=self.timeout_seconds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 114, in _api_request
+    raise TelegramError(f"Telegram {method_name} failed: {exc}") from exc
+app.notifications.telegram.TelegramError: Telegram sendMessage failed: <urlopen error timed out>
+2026-08-27 16:07:29,267 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2026-08-27 16:07:59,935 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error _ssl.c:983: The handshake operation timed out>
+2026-08-27 16:08:31,172 ERROR scanner Telegram command polling failed; retrying
+Traceback (most recent call last):
+  File "C:\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Python312\Lib\http\client.py", line 1477, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\ssl.py", line 1042, in _create
+    self.do_handshake()
+  File "C:\Python312\Lib\ssl.py", line 1320, in do_handshake
+    self._sslobj.do_handshake()
+TimeoutError: _ssl.c:983: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 96, in _api_request
+    with urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error _ssl.c:983: The handshake operation timed out>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram_commands.py", line 54, in _run
+    updates = self.notifier.get_updates(offset=self._offset, timeout=25)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 69, in get_updates
+    result = self._api_request("getUpdates", query, timeout=max(self.timeout_seconds, timeout + 5), method="GET")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 114, in _api_request
+    raise TelegramError(f"Telegram {method_name} failed: {exc}") from exc
+app.notifications.telegram.TelegramError: Telegram getUpdates failed: <urlopen error _ssl.c:983: The handshake operation timed out>
+2026-08-27 16:09:04,356 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error _ssl.c:983: The handshake operation timed out>
+2026-08-27 16:09:35,039 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error _ssl.c:983: The handshake operation timed out>
+2026-08-27 16:09:57,103 ERROR scanner Telegram command polling failed; retrying
+Traceback (most recent call last):
+  File "C:\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Python312\Lib\http\client.py", line 1470, in connect
+    super().connect()
+  File "C:\Python312\Lib\http\client.py", line 1001, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 853, in create_connection
+    raise exceptions[0]
+  File "C:\Python312\Lib\socket.py", line 838, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 96, in _api_request
+    with urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram_commands.py", line 54, in _run
+    updates = self.notifier.get_updates(offset=self._offset, timeout=25)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 69, in get_updates
+    result = self._api_request("getUpdates", query, timeout=max(self.timeout_seconds, timeout + 5), method="GET")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 114, in _api_request
+    raise TelegramError(f"Telegram {method_name} failed: {exc}") from exc
+app.notifications.telegram.TelegramError: Telegram getUpdates failed: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2026-08-27 16:10:21,172 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2026-08-27 16:10:42,718 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2026-08-27 16:11:04,775 ERROR scanner Telegram command polling failed; retrying
+Traceback (most recent call last):
+  File "C:\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Python312\Lib\http\client.py", line 1470, in connect
+    super().connect()
+  File "C:\Python312\Lib\http\client.py", line 1001, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 853, in create_connection
+    raise exceptions[0]
+  File "C:\Python312\Lib\socket.py", line 838, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 96, in _api_request
+    with urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1392, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\urllib\request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram_commands.py", line 54, in _run
+    updates = self.notifier.get_updates(offset=self._offset, timeout=25)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 69, in get_updates
+    result = self._api_request("getUpdates", query, timeout=max(self.timeout_seconds, timeout + 5), method="GET")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Awais Nisar\OneDrive\文档\Trading-Signal-Scanner\app\notifications\telegram.py", line 114, in _api_request
+    raise TelegramError(f"Telegram {method_name} failed: {exc}") from exc
+app.notifications.telegram.TelegramError: Telegram getUpdates failed: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2026-08-27 16:11:28,835 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+2026-08-27 16:11:59,550 WARNING scanner Telegram request failed; retrying getUpdates: <urlopen error _ssl.c:983: The handshake operation timed out>
