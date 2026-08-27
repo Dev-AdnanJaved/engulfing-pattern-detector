@@ -1,0 +1,1 @@
+"""SQLite signal history storage."""

@@ -1,0 +1,870 @@
+I already have a working Python trading scanner with TWO independent market-data providers:
+
+1. OANDA
+2. MetaTrader 5 / Skilling
+
+Both are working.
+
+I now want to ADD A THIRD completely independent data provider:
+
+3. CAPITAL.COM API
+
+IMPORTANT:
+DO NOT remove, rewrite, replace, or break OANDA or MT5.
+
+Capital.com should simply be another independent source that can provide instruments such as US100 that may not exist in OANDA.
+
+==================================================
+1. GOAL
+==================================================
+
+Add Capital.com as a third market-data provider.
+
+The bot should be able to get candle data from Capital.com and run the EXACT SAME existing strategy on those candles.
+
+The architecture should become:
+
+                    SCANNER
+                       |
+                  DATA MANAGER
+                       |
+        ┌──────────────┼──────────────┐
+        │              │              │
+      OANDA           MT5        CAPITAL.COM
+        │              │              │
+   FX / Gold       US100 etc.     US100 etc.
+        │              │              │
+        └──────────────┼──────────────┘
+                       |
+                NORMALIZED CANDLES
+                       |
+                    STRATEGY
+                       |
+                 BUY / SELL SIGNAL
+                       |
+                    TELEGRAM
+
+
+All three providers must remain independent.
+
+==================================================
+2. CAPITAL.COM API
+==================================================
+
+Use Capital.com's official API for market data.
+
+Use the Capital.com demo environment/account for development.
+
+Do NOT scrape the Capital.com website.
+
+Do NOT scrape TradingView.
+
+Do NOT use browser automation to obtain candles.
+
+Use the official Capital.com API endpoints and authentication flow.
+
+The Capital.com provider should be responsible ONLY for Capital.com communication and market-data retrieval.
+
+==================================================
+3. CREDENTIALS
+==================================================
+
+I will provide my Capital.com demo/API credentials.
+
+Keep credentials in environment variables / Replit Secrets.
+
+Do NOT hardcode them.
+
+Create/update .env.example with the required Capital.com variables.
+
+Use appropriate names such as:
+
+CAPITAL_API_KEY=
+CAPITAL_IDENTIFIER=
+CAPITAL_PASSWORD=
+
+If Capital.com requires any additional authentication/configuration value, add it appropriately.
+
+Never print passwords or secrets in logs.
+
+==================================================
+4. CAPITAL.COM SESSION
+==================================================
+
+Implement the Capital.com authentication/session flow required by its API.
+
+The provider should:
+
+1. Authenticate
+2. Obtain the required session/authentication information
+3. Maintain the session while the bot is running
+4. Re-authenticate or refresh when necessary
+5. Handle expired sessions
+6. Handle authentication errors
+7. Close/clean up correctly when shutting down
+
+Do not expose credentials in logs.
+
+==================================================
+5. SYMBOL CONFIGURATION
+==================================================
+
+Capital.com must support the same flexibility as OANDA and MT5.
+
+Support:
+
+A) MANUAL SYMBOL MODE
+
+Example:
+
+capital:
+  enabled: true
+  symbol_mode: "manual"
+
+  symbols:
+    - "US100"
+
+The exact Capital.com epic/instrument identifier must be used.
+
+IMPORTANT:
+
+Do NOT assume that the Capital.com identifier is literally "US100".
+
+Capital.com uses instrument/epic identifiers.
+
+Implement symbol discovery/search so I can find the exact identifier available on my account.
+
+For example, allow searching for:
+
+US100
+NASDAQ
+US TECH
+etc.
+
+Then display matching Capital.com instruments.
+
+==================================================
+6. ALL SYMBOL MODE
+==================================================
+
+Support:
+
+capital:
+  symbol_mode: "all"
+
+In this mode, retrieve available Capital.com instruments according to the API.
+
+Do not blindly scan every instrument returned by the API.
+
+Keep the existing filtering/configuration approach.
+
+The bot should be able to scan only eligible instruments.
+
+==================================================
+7. SYMBOL DISCOVERY
+==================================================
+
+Create a simple diagnostic function for Capital.com.
+
+When Capital.com connects, log:
+
+- Authentication successful
+- Number of available instruments if provided
+- Matching instruments for a search
+
+For example:
+
+INFO Capital.com connected
+INFO Searching Capital.com instruments for: US100
+INFO Matching instruments:
+INFO US100 / relevant epic
+INFO ...
+
+The exact epic should then be usable in config.
+
+DO NOT hardcode an assumed Capital.com symbol.
+
+==================================================
+8. TIMEFRAMES
+==================================================
+
+Capital.com must provide the candle timeframes required by the existing strategy:
+
+1H
+4H
+1D
+
+The existing strategy remains unchanged:
+
+1H = signal timeframe
+4H = confirmation
+1D = confirmation
+
+If Capital.com's API uses different interval identifiers, map them internally.
+
+The rest of the application should still use:
+
+1h
+4h
+1d
+
+==================================================
+9. HISTORICAL CANDLES
+==================================================
+
+The Capital.com provider must retrieve historical OHLC candle data.
+
+Return normalized candles in the same format currently used by OANDA and MT5.
+
+Example:
+
+symbol
+timeframe
+timestamp
+open
+high
+low
+close
+volume
+is_closed
+
+The strategy must NOT know whether the candle came from:
+
+OANDA
+MT5
+Capital.com
+
+==================================================
+10. CANDLE NORMALIZATION
+==================================================
+
+Convert Capital.com's API response into the existing normalized Candle model.
+
+Do not create a separate strategy implementation for Capital.com.
+
+Example:
+
+Capital.com API candle
+        ↓
+CapitalProvider
+        ↓
+Normalized Candle
+        ↓
+Existing Strategy
+
+The existing strategy should work without modification.
+
+==================================================
+11. CLOSED CANDLE RULE
+==================================================
+
+This rule must remain exactly the same.
+
+ONLY CLOSED candles can generate signals.
+
+Never use a currently forming candle for:
+
+- 1H engulfing
+- 4H confirmation
+- 1D confirmation
+
+The latest CLOSED 1H candle is the signal candle.
+
+The latest CLOSED 4H candle is confirmation.
+
+The latest CLOSED 1D candle is confirmation.
+
+No repainting.
+
+If Capital.com returns the current incomplete candle, correctly exclude it from signal calculations.
+
+==================================================
+12. EXACT EXISTING STRATEGY
+==================================================
+
+DO NOT CHANGE THE EXISTING STRATEGY.
+
+The strategy is:
+
+BUY:
+
+CLOSED 1H bullish engulfing
++
+CLOSED 4H bullish
++
+CLOSED 1D bullish
+
+SELL:
+
+CLOSED 1H bearish engulfing
++
+CLOSED 4H bearish
++
+CLOSED 1D bearish
+
+
+BULLISH ENGULFING:
+
+Previous 1H candle:
+
+previous.close < previous.open
+
+Current 1H candle:
+
+current.close > current.open
+
+Current candle BODY completely engulfs previous candle BODY:
+
+current.open <= previous.close
+AND
+current.close >= previous.open
+
+
+BEARISH ENGULFING:
+
+Previous 1H candle:
+
+previous.close > previous.open
+
+Current 1H candle:
+
+current.close < current.open
+
+Current candle BODY completely engulfs previous candle BODY:
+
+current.open >= previous.close
+AND
+current.close <= previous.open
+
+
+WICKS ARE IGNORED.
+
+Only OPEN and CLOSE are used for engulfing.
+
+Do NOT use EMA.
+
+Do NOT use RSI.
+
+Do NOT use MACD.
+
+Do NOT use ADX.
+
+Do NOT use ATR.
+
+Do NOT add any additional indicators or conditions.
+
+==================================================
+13. CURRENT PRICE
+==================================================
+
+For Capital.com signals, obtain the current price from Capital.com.
+
+Do not use OANDA price.
+
+Do not use MT5 price.
+
+Do not fabricate or approximate the price.
+
+The provider should expose a current-price/market-price method.
+
+==================================================
+14. PROVIDER SELECTION
+==================================================
+
+The existing application already supports provider-based symbols.
+
+Extend that system to support:
+
+provider: "capital"
+
+Example:
+
+symbols:
+
+  - symbol: "XAU_USD"
+    provider: "oanda"
+
+  - symbol: "US100"
+    provider: "mt5"
+
+  - symbol: "US100"
+    provider: "capital"
+
+If the same instrument exists on multiple providers, they must remain separate data sources.
+
+Do not merge their candles.
+
+Do not assume their prices are identical.
+
+==================================================
+15. TELEGRAM
+==================================================
+
+Use the EXISTING Telegram notification system.
+
+Do NOT create a second Telegram implementation.
+
+Capital.com signals should use exactly the same Telegram alert formatting as existing signals.
+
+Example:
+
+🚨 *BUY SIGNAL — US100*
+
+*Pair:* US100
+*Signal:* 🟢 BUY
+*Timeframe:* 1H
+*Current Price:* XXXX
+
+📊 *SETUP*
+
+• 1H: 🟢 Bullish Engulfing
+• 4H: 🟢 Bullish
+• 1D: 🟢 Bullish
+
+💡 *REASON*
+
+Bullish engulfing pattern formed on the 1H closed candle with bullish 4H and 1D confirmation.
+
+🕐 *CANDLE CLOSED:* XXXX UTC
+
+Use SINGLE * around headings.
+
+Do not use double-star Markdown.
+
+==================================================
+16. DUPLICATE PREVENTION
+==================================================
+
+Use the EXISTING duplicate-prevention system.
+
+Update the signal identity so provider is included.
+
+Unique identity:
+
+provider
++
+symbol
++
+timeframe
++
+candle timestamp
++
+direction
+
+Example:
+
+capital
++
+US100
++
+1h
++
+2026-08-27 10:00
++
+BUY
+
+This must be different from:
+
+mt5
++
+US100
++
+1h
++
+2026-08-27 10:00
++
+BUY
+
+because they are different data sources.
+
+==================================================
+17. DATABASE
+==================================================
+
+Keep the existing SQLite database.
+
+Do NOT introduce PostgreSQL or Redis.
+
+If the current signals table does not already contain provider/source information, add it safely through the existing database mechanism.
+
+Example:
+
+provider = "oanda"
+provider = "mt5"
+provider = "capital"
+
+Existing OANDA and MT5 records must not be broken.
+
+==================================================
+18. ERROR ISOLATION
+==================================================
+
+Capital.com failures must NOT crash OANDA or MT5.
+
+For example:
+
+OANDA       → working
+MT5         → working
+Capital.com → API error
+
+OANDA and MT5 must continue scanning.
+
+Likewise:
+
+Capital.com → working
+OANDA       → temporary failure
+
+Capital.com should continue if possible.
+
+Use isolated provider error handling.
+
+==================================================
+19. RATE LIMITS
+==================================================
+
+Respect Capital.com's API rate limits.
+
+Do not continuously request the same historical candles unnecessarily.
+
+Reuse/calculate only when a new candle is required.
+
+Follow the same efficient scanning approach already used by OANDA and MT5.
+
+If the API has rate-limit responses, handle them gracefully with appropriate retry/backoff.
+
+Do not create an aggressive request loop.
+
+==================================================
+20. CONFIG
+==================================================
+
+Add Capital.com configuration without breaking the existing configuration.
+
+Example:
+
+capital:
+  enabled: true
+
+  symbol_mode: "manual"
+
+  symbols:
+    - "US100"
+
+  scan_interval_seconds: 30
+
+  history:
+    1h: 200
+    4h: 100
+    1d: 100
+
+  timeout_seconds: 10
+
+Keep the actual Capital.com credentials OUT of config.yaml.
+
+Use environment variables / Replit Secrets.
+
+==================================================
+21. ARCHITECTURE
+==================================================
+
+The project should now conceptually be:
+
+data/
+    oanda.py
+    mt5.py
+    capital.py
+    models.py
+
+All providers should implement the same basic data interface.
+
+For example:
+
+get_instruments()
+get_candles(symbol, timeframe, ...)
+get_current_price(symbol)
+
+The exact implementation can differ internally.
+
+The scanner/data manager should not care how the data is obtained.
+
+==================================================
+22. DO NOT DUPLICATE STRATEGY CODE
+==================================================
+
+There must be ONE strategy implementation.
+
+Not:
+
+oanda_strategy.py
+mt5_strategy.py
+capital_strategy.py
+
+Instead:
+
+OANDA ──────┐
+MT5 ────────┼──→ normalized candles → ONE strategy
+Capital.com ┘
+
+This is very important.
+
+==================================================
+23. CAPITAL.COM SYMBOL MAPPING
+==================================================
+
+Allow a clean mapping between my internal symbol name and the Capital.com epic.
+
+Example:
+
+capital_symbols:
+
+  US100:
+    epic: "ACTUAL_EPIC_FROM_CAPITAL"
+
+The exact epic must be configurable.
+
+Do not hardcode it inside Python.
+
+If possible, keep the displayed symbol:
+
+US100
+
+while internally using:
+
+actual Capital.com epic
+
+==================================================
+24. LOGGING
+==================================================
+
+Add clear Capital.com logs.
+
+Examples:
+
+INFO Capital.com provider enabled
+INFO Connecting to Capital.com
+INFO Capital.com authentication successful
+INFO Searching for US100
+INFO Found Capital.com instrument: XXXX
+INFO Fetching 1H candles for XXXX
+INFO Fetching 4H candles for XXXX
+INFO Fetching 1D candles for XXXX
+INFO Capital.com candle data normalized
+INFO Capital.com BUY signal detected
+INFO Telegram alert sent
+
+Errors:
+
+ERROR Capital.com authentication failed
+ERROR Capital.com symbol not found
+ERROR Capital.com candle request failed
+ERROR Capital.com rate limit reached
+
+Never log passwords, API keys, or sensitive credentials.
+
+==================================================
+25. TESTING
+==================================================
+
+Add tests for the Capital.com provider.
+
+Do not require real Capital.com credentials for unit tests.
+
+Mock the API responses where appropriate.
+
+Test:
+
+- authentication handling
+- symbol discovery
+- symbol not found
+- candle retrieval
+- timeframe mapping
+- candle normalization
+- closed-candle handling
+- current-price retrieval
+- API errors
+- rate-limit handling
+- duplicate prevention
+- provider isolation
+
+Also verify that:
+
+OANDA still works.
+
+MT5 still works.
+
+Capital.com works independently.
+
+==================================================
+26. DEPENDENCIES
+==================================================
+
+Use a suitable Python HTTP client for the Capital.com REST API if one is not already available.
+
+Prefer the existing project's HTTP dependency if it already provides what is needed.
+
+Do not introduce unnecessary libraries.
+
+Do not remove existing OANDA or MT5 dependencies.
+
+==================================================
+27. IMPORTANT — DO NOT BREAK EXISTING MT5
+==================================================
+
+I already implemented MT5.
+
+Do NOT remove it just because Capital.com is being added.
+
+The final application must have THREE independent providers:
+
+1. OANDA
+2. MT5
+3. Capital.com
+
+Each provider can be enabled/disabled independently.
+
+Example:
+
+oanda:
+  enabled: true
+
+mt5:
+  enabled: true
+
+capital:
+  enabled: true
+
+==================================================
+28. FINAL DATA FLOW
+==================================================
+
+Example:
+
+EUR_USD
+    ↓
+OANDA
+    ↓
+Normalized candles
+    ↓
+Strategy
+
+
+US100
+    ↓
+MT5
+    ↓
+Normalized candles
+    ↓
+Strategy
+
+
+US100
+    ↓
+Capital.com
+    ↓
+Normalized candles
+    ↓
+Strategy
+
+
+All three then use:
+
+1H Engulfing
++
+4H confirmation
++
+1D confirmation
+↓
+BUY / SELL
+↓
+Duplicate check
+↓
+SQLite
+↓
+Telegram
+
+==================================================
+29. IMPORTANT IMPLEMENTATION RULE
+==================================================
+
+FIRST inspect the existing project.
+
+Understand:
+
+- current OANDA provider
+- current MT5 provider
+- normalized candle model
+- scanner
+- strategy
+- Telegram
+- SQLite
+- configuration
+- duplicate prevention
+
+Then add Capital.com using the existing architecture.
+
+Do NOT rewrite working modules unnecessarily.
+
+Make the smallest clean changes required.
+
+==================================================
+30. FIRST IMPLEMENTATION TASK
+==================================================
+
+Implement Capital.com as a third independent provider.
+
+First:
+
+1. Add Capital.com configuration.
+2. Add environment variables.
+3. Implement authentication.
+4. Implement connection/session handling.
+5. Implement instrument discovery/search.
+6. Find the exact US100 instrument/epic available through my Capital.com account.
+7. Implement 1H candle retrieval.
+8. Implement 4H candle retrieval.
+9. Implement 1D candle retrieval.
+10. Implement current price retrieval.
+11. Normalize candles into the existing Candle model.
+12. Connect Capital.com to the existing scanner.
+13. Run the existing strategy.
+14. Connect to the existing Telegram alert system.
+15. Add provider-aware duplicate prevention.
+16. Add tests.
+17. Verify OANDA and MT5 still work.
+
+DO NOT implement trading/order execution.
+
+Capital.com is DATA ONLY.
+
+==================================================
+FINAL REQUIREMENT
+==================================================
+
+The strategy must remain EXACTLY:
+
+BUY:
+
+CLOSED 1H bullish engulfing
++
+CLOSED 4H bullish
++
+CLOSED 1D bullish
+
+
+SELL:
+
+CLOSED 1H bearish engulfing
++
+CLOSED 4H bearish
++
+CLOSED 1D bearish
+
+Nothing else.
+
+Do not modify the strategy.
+
+Do not remove OANDA.
+
+Do not remove MT5.
+
+Just add Capital.com as the THIRD independent data provider.

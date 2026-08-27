@@ -1,0 +1,1 @@
+"""Pure strategy and signal models."""
