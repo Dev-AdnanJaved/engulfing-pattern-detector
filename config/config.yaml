@@ -83,6 +83,7 @@ kraken_futures:
   symbols:
     - "PF_XBTUSD"
     - "PF_ETHUSD"
+    - "PF_BNBUSD"
   all_mode_filter:
     include_patterns:
       - "PF_*"

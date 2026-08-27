@@ -205,6 +205,11 @@ def main() -> None:
         help="list Capital.com symbols matching QUERY and exit",
     )
     parser.add_argument(
+        "--binance-search",
+        metavar="QUERY",
+        help="list Binance Futures symbols matching QUERY and exit",
+    )
+    parser.add_argument(
         "--kraken-search",
         metavar="QUERY",
         help="list Kraken Futures symbols matching QUERY and exit",
