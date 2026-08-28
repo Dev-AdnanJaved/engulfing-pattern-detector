@@ -230,8 +230,8 @@ class Scanner:
             refresh_count=2,
             provider=provider,
         )
-        latest_4h = _latest_closed(four_hour)
-        latest_1d = _latest_closed(one_day)
+        latest_4h = _latest_candle(four_hour)
+        latest_1d = _latest_candle(one_day)
         if latest_4h is None or latest_1d is None:
             if not already_processed_closed:
                 self._last_processed[processed_key] = candle_key
@@ -598,6 +598,10 @@ def _early_minutes_before_close(pattern_config: dict[str, Any]) -> int:
 
 def _format_time(value: datetime | None) -> str:
     return value.strftime("%Y-%m-%d %H:%M:%S UTC") if value else "not yet"
+
+
+def _latest_candle(candles: list[Candle]) -> Candle | None:
+    return candles[-1] if candles else None
 
 
 def _latest_closed(candles: list[Candle]) -> Candle | None:

@@ -64,8 +64,27 @@ def test_sell_missing_confirmation_is_no_signal():
     assert evaluate([c(100, 105, 0), c(106, 99, 1)], c(4600, 4650, 2, "4h"), c(4700, 4500, 3, "1d")) is None
 
 
-def test_open_confirmation_candle_is_rejected():
-    assert evaluate([c(105, 100, 0), c(99, 106, 1)], c(4600, 4650, 2, "4h", closed=False), c(4500, 4700, 3, "1d")) is None
+def test_open_confirmation_candle_is_used_for_direction():
+    signal = evaluate(
+        [c(105, 100, 0), c(99, 106, 1)],
+        c(4600, 4650, 2, "4h", closed=False),
+        c(4500, 4700, 3, "1d", closed=False),
+    )
+    assert signal is not None
+    assert signal.direction == "BUY"
+    assert signal.h4_direction == "bullish"
+    assert signal.d1_direction == "bullish"
+
+
+def test_open_confirmation_candle_can_block_signal():
+    assert (
+        evaluate(
+            [c(100, 105, 0), c(106, 99, 1)],
+            c(4600, 4650, 2, "4h", closed=False),
+            c(4700, 4500, 3, "1d", closed=False),
+        )
+        is None
+    )
 
 
 def test_forming_1h_candle_is_ignored_without_early_detection():

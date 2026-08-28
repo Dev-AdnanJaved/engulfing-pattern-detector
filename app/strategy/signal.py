@@ -54,8 +54,6 @@ def evaluate_signal(
 ) -> Optional[Signal]:
     if four_hour_candle is None or one_day_candle is None:
         return None
-    if not four_hour_candle.is_closed or not one_day_candle.is_closed:
-        return None
 
     h4_direction = _direction(four_hour_candle, reject_doji)
     d1_direction = _direction(one_day_candle, reject_doji)
